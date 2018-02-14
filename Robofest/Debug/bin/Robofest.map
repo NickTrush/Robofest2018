@@ -1,0 +1,1070 @@
+Archive member included to satisfy reference by file (symbol)
+
+c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m\libgcc.a(_arm_addsubdf3.o)
+                              ..\obj\main.o (__aeabi_i2d)
+c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m\libgcc.a(_arm_muldivdf3.o)
+                              ..\obj\main.o (__aeabi_dmul)
+c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m\libgcc.a(_arm_fixdfsi.o)
+                              ..\obj\main.o (__aeabi_d2iz)
+c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-exit.o)
+                              c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/crt0.o (exit)
+c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-impure.o)
+                              c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-exit.o) (_global_impure_ptr)
+c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-init.o)
+                              c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/crt0.o (__libc_init_array)
+c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-memset.o)
+                              c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/crt0.o (memset)
+c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-__call_atexit.o)
+                              c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-exit.o) (__call_exitprocs)
+c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-atexit.o)
+                              c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-__call_atexit.o) (atexit)
+c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-fini.o)
+                              c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-__call_atexit.o) (__libc_fini_array)
+c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-lock.o)
+                              c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-__call_atexit.o) (__retarget_lock_acquire_recursive)
+c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-__atexit.o)
+                              c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-atexit.o) (__register_exitproc)
+
+Allocating common symbols
+Common symbol       size              file
+
+__lock___atexit_recursive_mutex
+                    0x1               c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-lock.o)
+CH                  0x20              ..\obj\main.o
+__lock___arc4random_mutex
+                    0x1               c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-lock.o)
+Radio_Data          0xfa              ..\obj\main.o
+Start_byte          0x1               ..\obj\main.o
+huart3              0x70              ..\obj\main.o
+DCH1                0x1               ..\obj\main.o
+Frame_lost          0x1               ..\obj\main.o
+uwTick              0x4               ..\obj\stm32f7xx_hal.o
+pFlash              0x1c              ..\obj\stm32f7xx_hal_flash.o
+__lock___env_recursive_mutex
+                    0x1               c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-lock.o)
+__lock___sinit_recursive_mutex
+                    0x1               c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-lock.o)
+htim3               0x40              ..\obj\main.o
+__lock___malloc_recursive_mutex
+                    0x1               c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-lock.o)
+i                   0x4               ..\obj\main.o
+byte                0x1               ..\obj\stm32f7xx_it.o
+DCH2                0x1               ..\obj\main.o
+failsafe            0x1               ..\obj\main.o
+htim2               0x40              ..\obj\main.o
+huart2              0x70              ..\obj\main.o
+__lock___at_quick_exit_mutex
+                    0x1               c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-lock.o)
+__lock___dd_hash_mutex
+                    0x1               c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-lock.o)
+__lock___tz_mutex   0x1               c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-lock.o)
+__lock___sfp_recursive_mutex
+                    0x1               c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-lock.o)
+
+Discarded input sections
+
+ .text          0x00000000        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/crti.o
+ .data          0x00000000        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/crti.o
+ .bss           0x00000000        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/crti.o
+ .data          0x00000000        0x4 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/crtbegin.o
+ .text          0x00000000       0x74 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/crt0.o
+ .data          0x00000000        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/crt0.o
+ .bss           0x00000000        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/crt0.o
+ .ARM.extab     0x00000000        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/crt0.o
+ .ARM.exidx     0x00000000        0x8 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/crt0.o
+ .ARM.attributes
+                0x00000000       0x1c c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/crt0.o
+ .data          0x00000000        0x0 ..\obj\stm32f7xx_hal_tim_ex.o
+ .bss           0x00000000        0x0 ..\obj\stm32f7xx_hal_tim_ex.o
+ .text          0x00000000     0x39c0 ..\obj\stm32f7xx_hal_i2c.o
+ .data          0x00000000        0x0 ..\obj\stm32f7xx_hal_i2c.o
+ .bss           0x00000000        0x0 ..\obj\stm32f7xx_hal_i2c.o
+ .debug_info    0x00000000     0x242a ..\obj\stm32f7xx_hal_i2c.o
+ .debug_abbrev  0x00000000      0x2dd ..\obj\stm32f7xx_hal_i2c.o
+ .debug_aranges
+                0x00000000       0x20 ..\obj\stm32f7xx_hal_i2c.o
+ .debug_line    0x00000000     0x1052 ..\obj\stm32f7xx_hal_i2c.o
+ .debug_str     0x00000000     0x130b ..\obj\stm32f7xx_hal_i2c.o
+ .comment       0x00000000       0x80 ..\obj\stm32f7xx_hal_i2c.o
+ .debug_frame   0x00000000      0xafc ..\obj\stm32f7xx_hal_i2c.o
+ .ARM.attributes
+                0x00000000       0x33 ..\obj\stm32f7xx_hal_i2c.o
+ .text          0x00000000      0x628 ..\obj\stm32f7xx_hal_flash_ex.o
+ .data          0x00000000        0x0 ..\obj\stm32f7xx_hal_flash_ex.o
+ .bss           0x00000000        0x0 ..\obj\stm32f7xx_hal_flash_ex.o
+ .debug_info    0x00000000      0xf5c ..\obj\stm32f7xx_hal_flash_ex.o
+ .debug_abbrev  0x00000000      0x2e7 ..\obj\stm32f7xx_hal_flash_ex.o
+ .debug_aranges
+                0x00000000       0x20 ..\obj\stm32f7xx_hal_flash_ex.o
+ .debug_line    0x00000000      0x4b6 ..\obj\stm32f7xx_hal_flash_ex.o
+ .debug_str     0x00000000      0xa09 ..\obj\stm32f7xx_hal_flash_ex.o
+ .comment       0x00000000       0x80 ..\obj\stm32f7xx_hal_flash_ex.o
+ .debug_frame   0x00000000      0x284 ..\obj\stm32f7xx_hal_flash_ex.o
+ .ARM.attributes
+                0x00000000       0x33 ..\obj\stm32f7xx_hal_flash_ex.o
+ .data          0x00000000        0x0 ..\obj\stm32f7xx_hal.o
+ .bss           0x00000000        0x0 ..\obj\stm32f7xx_hal.o
+ .data          0x00000000        0x0 ..\obj\startup_stm32f10x_hd.o
+ .bss           0x00000000        0x0 ..\obj\startup_stm32f10x_hd.o
+ .text          0x00000000      0x12e ..\obj\stm32f7xx_hal_i2c_ex.o
+ .data          0x00000000        0x0 ..\obj\stm32f7xx_hal_i2c_ex.o
+ .bss           0x00000000        0x0 ..\obj\stm32f7xx_hal_i2c_ex.o
+ .debug_info    0x00000000      0xf04 ..\obj\stm32f7xx_hal_i2c_ex.o
+ .debug_abbrev  0x00000000      0x211 ..\obj\stm32f7xx_hal_i2c_ex.o
+ .debug_aranges
+                0x00000000       0x20 ..\obj\stm32f7xx_hal_i2c_ex.o
+ .debug_line    0x00000000      0x3e8 ..\obj\stm32f7xx_hal_i2c_ex.o
+ .debug_str     0x00000000      0xbaa ..\obj\stm32f7xx_hal_i2c_ex.o
+ .comment       0x00000000       0x80 ..\obj\stm32f7xx_hal_i2c_ex.o
+ .debug_frame   0x00000000       0x60 ..\obj\stm32f7xx_hal_i2c_ex.o
+ .ARM.attributes
+                0x00000000       0x33 ..\obj\stm32f7xx_hal_i2c_ex.o
+ .text          0x00000000      0x610 ..\obj\stm32f7xx_hal_flash.o
+ .data          0x00000000        0x0 ..\obj\stm32f7xx_hal_flash.o
+ .bss           0x00000000        0x0 ..\obj\stm32f7xx_hal_flash.o
+ .debug_info    0x00000000      0xe01 ..\obj\stm32f7xx_hal_flash.o
+ .debug_abbrev  0x00000000      0x2ff ..\obj\stm32f7xx_hal_flash.o
+ .debug_aranges
+                0x00000000       0x20 ..\obj\stm32f7xx_hal_flash.o
+ .debug_line    0x00000000      0x4ae ..\obj\stm32f7xx_hal_flash.o
+ .debug_str     0x00000000      0x94a ..\obj\stm32f7xx_hal_flash.o
+ .comment       0x00000000       0x80 ..\obj\stm32f7xx_hal_flash.o
+ .debug_frame   0x00000000      0x274 ..\obj\stm32f7xx_hal_flash.o
+ .ARM.attributes
+                0x00000000       0x33 ..\obj\stm32f7xx_hal_flash.o
+ COMMON         0x00000000       0x1c ..\obj\stm32f7xx_hal_flash.o
+ .data          0x00000000        0x0 ..\obj\stm32f7xx_hal_uart.o
+ .bss           0x00000000        0x0 ..\obj\stm32f7xx_hal_uart.o
+ .data          0x00000000        0x0 ..\obj\stm32f7xx_hal_gpio.o
+ .bss           0x00000000        0x0 ..\obj\stm32f7xx_hal_gpio.o
+ .data          0x00000000        0x0 ..\obj\stm32f7xx_hal_rcc.o
+ .bss           0x00000000        0x0 ..\obj\stm32f7xx_hal_rcc.o
+ .data          0x00000000        0x0 ..\obj\stm32f7xx_hal_tim.o
+ .bss           0x00000000        0x0 ..\obj\stm32f7xx_hal_tim.o
+ .data          0x00000000        0x0 ..\obj\stm32f7xx_hal_rcc_ex.o
+ .bss           0x00000000        0x0 ..\obj\stm32f7xx_hal_rcc_ex.o
+ .data          0x00000000        0x0 ..\obj\stm32f7xx_it.o
+ .data          0x00000000        0x0 ..\obj\stm32f7xx_hal_cortex.o
+ .bss           0x00000000        0x0 ..\obj\stm32f7xx_hal_cortex.o
+ .bss           0x00000000        0x0 ..\obj\system_stm32f7xx.o
+ .text          0x00000000      0x46c ..\obj\stm32f7xx_hal_pwr_ex.o
+ .data          0x00000000        0x0 ..\obj\stm32f7xx_hal_pwr_ex.o
+ .bss           0x00000000        0x0 ..\obj\stm32f7xx_hal_pwr_ex.o
+ .debug_info    0x00000000     0x1177 ..\obj\stm32f7xx_hal_pwr_ex.o
+ .debug_abbrev  0x00000000      0x2b4 ..\obj\stm32f7xx_hal_pwr_ex.o
+ .debug_aranges
+                0x00000000       0x20 ..\obj\stm32f7xx_hal_pwr_ex.o
+ .debug_line    0x00000000      0x3f3 ..\obj\stm32f7xx_hal_pwr_ex.o
+ .debug_str     0x00000000      0xa88 ..\obj\stm32f7xx_hal_pwr_ex.o
+ .comment       0x00000000       0x80 ..\obj\stm32f7xx_hal_pwr_ex.o
+ .debug_frame   0x00000000      0x1c8 ..\obj\stm32f7xx_hal_pwr_ex.o
+ .ARM.attributes
+                0x00000000       0x33 ..\obj\stm32f7xx_hal_pwr_ex.o
+ .data          0x00000000        0x0 ..\obj\stm32f7xx_hal_dma.o
+ .bss           0x00000000        0x0 ..\obj\stm32f7xx_hal_dma.o
+ .text          0x00000000     0x1580 ..\obj\stm32f7xx_hal_dma_ex.o
+ .data          0x00000000        0x0 ..\obj\stm32f7xx_hal_dma_ex.o
+ .bss           0x00000000        0x0 ..\obj\stm32f7xx_hal_dma_ex.o
+ .debug_info    0x00000000      0xda0 ..\obj\stm32f7xx_hal_dma_ex.o
+ .debug_abbrev  0x00000000      0x254 ..\obj\stm32f7xx_hal_dma_ex.o
+ .debug_aranges
+                0x00000000       0x20 ..\obj\stm32f7xx_hal_dma_ex.o
+ .debug_line    0x00000000      0xec7 ..\obj\stm32f7xx_hal_dma_ex.o
+ .debug_str     0x00000000      0x997 ..\obj\stm32f7xx_hal_dma_ex.o
+ .comment       0x00000000       0x80 ..\obj\stm32f7xx_hal_dma_ex.o
+ .debug_frame   0x00000000       0xac ..\obj\stm32f7xx_hal_dma_ex.o
+ .ARM.attributes
+                0x00000000       0x33 ..\obj\stm32f7xx_hal_dma_ex.o
+ .text          0x00000000      0x328 ..\obj\stm32f7xx_hal_pwr.o
+ .data          0x00000000        0x0 ..\obj\stm32f7xx_hal_pwr.o
+ .bss           0x00000000        0x0 ..\obj\stm32f7xx_hal_pwr.o
+ .debug_info    0x00000000     0x11e4 ..\obj\stm32f7xx_hal_pwr.o
+ .debug_abbrev  0x00000000      0x271 ..\obj\stm32f7xx_hal_pwr.o
+ .debug_aranges
+                0x00000000       0x20 ..\obj\stm32f7xx_hal_pwr.o
+ .debug_line    0x00000000      0x3ec ..\obj\stm32f7xx_hal_pwr.o
+ .debug_str     0x00000000      0xa7f ..\obj\stm32f7xx_hal_pwr.o
+ .comment       0x00000000       0x80 ..\obj\stm32f7xx_hal_pwr.o
+ .debug_frame   0x00000000      0x254 ..\obj\stm32f7xx_hal_pwr.o
+ .ARM.attributes
+                0x00000000       0x33 ..\obj\stm32f7xx_hal_pwr.o
+ .data          0x00000000        0x0 ..\obj\main.o
+ .data          0x00000000        0x0 ..\obj\stm32f7xx_hal_msp.o
+ .bss           0x00000000        0x0 ..\obj\stm32f7xx_hal_msp.o
+ .data          0x00000000        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m\libgcc.a(_arm_addsubdf3.o)
+ .bss           0x00000000        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m\libgcc.a(_arm_addsubdf3.o)
+ .data          0x00000000        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m\libgcc.a(_arm_muldivdf3.o)
+ .bss           0x00000000        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m\libgcc.a(_arm_muldivdf3.o)
+ .data          0x00000000        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m\libgcc.a(_arm_fixdfsi.o)
+ .bss           0x00000000        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m\libgcc.a(_arm_fixdfsi.o)
+ .text          0x00000000        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-exit.o)
+ .data          0x00000000        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-exit.o)
+ .bss           0x00000000        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-exit.o)
+ .text.exit     0x00000000       0x20 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-exit.o)
+ .debug_frame   0x00000000       0x28 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-exit.o)
+ .ARM.attributes
+                0x00000000       0x2e c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-exit.o)
+ .text          0x00000000        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-impure.o)
+ .data          0x00000000        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-impure.o)
+ .bss           0x00000000        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-impure.o)
+ .data._impure_ptr
+                0x00000000        0x4 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-impure.o)
+ .text          0x00000000        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-init.o)
+ .data          0x00000000        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-init.o)
+ .bss           0x00000000        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-init.o)
+ .text.__libc_init_array
+                0x00000000       0x50 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-init.o)
+ .debug_frame   0x00000000       0x2c c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-init.o)
+ .ARM.attributes
+                0x00000000       0x2e c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-init.o)
+ .text          0x00000000        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-memset.o)
+ .data          0x00000000        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-memset.o)
+ .bss           0x00000000        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-memset.o)
+ .text.memset   0x00000000       0x9c c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-memset.o)
+ .debug_frame   0x00000000       0x34 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-memset.o)
+ .ARM.attributes
+                0x00000000       0x2e c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-memset.o)
+ .text          0x00000000        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-__call_atexit.o)
+ .data          0x00000000        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-__call_atexit.o)
+ .bss           0x00000000        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-__call_atexit.o)
+ .text.__call_exitprocs
+                0x00000000       0xe8 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-__call_atexit.o)
+ .text          0x00000000        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-atexit.o)
+ .data          0x00000000        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-atexit.o)
+ .bss           0x00000000        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-atexit.o)
+ .text          0x00000000        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-fini.o)
+ .data          0x00000000        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-fini.o)
+ .bss           0x00000000        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-fini.o)
+ .text          0x00000000        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-lock.o)
+ .data          0x00000000        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-lock.o)
+ .bss           0x00000000        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-lock.o)
+ .text.__retarget_lock_init
+                0x00000000        0x4 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-lock.o)
+ .text.__retarget_lock_init_recursive
+                0x00000000        0x4 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-lock.o)
+ .text.__retarget_lock_close
+                0x00000000        0x4 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-lock.o)
+ .text.__retarget_lock_close_recursive
+                0x00000000        0x4 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-lock.o)
+ .text.__retarget_lock_acquire
+                0x00000000        0x4 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-lock.o)
+ .text.__retarget_lock_try_acquire
+                0x00000000        0x4 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-lock.o)
+ .text.__retarget_lock_try_acquire_recursive
+                0x00000000        0x4 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-lock.o)
+ .text.__retarget_lock_release
+                0x00000000        0x4 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-lock.o)
+ .text          0x00000000        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-__atexit.o)
+ .data          0x00000000        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-__atexit.o)
+ .bss           0x00000000        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-__atexit.o)
+ .text          0x00000000        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/crtend.o
+ .data          0x00000000        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/crtend.o
+ .bss           0x00000000        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/crtend.o
+ .eh_frame      0x00000000        0x4 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/crtend.o
+ .text          0x00000000        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/crtn.o
+ .data          0x00000000        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/crtn.o
+ .bss           0x00000000        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/crtn.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+rom              0x08000000         0x00100000         xr
+ram              0x20000000         0x00050000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/crti.o
+LOAD c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/crtbegin.o
+LOAD c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/crt0.o
+                0x20050000                _eram = 0x20050000
+
+.text           0x08000000     0xc54c
+ *(.isr_vector)
+ .isr_vector    0x08000000      0x134 ..\obj\startup_stm32f10x_hd.o
+                0x08000000                g_pfnVectors
+ *(.text*)
+ .text          0x08000134       0x6c c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/crtbegin.o
+ .text          0x080001a0     0x1c0c ..\obj\stm32f7xx_hal_tim_ex.o
+                0x080001a0                HAL_TIMEx_HallSensor_Init
+                0x080002bc                HAL_TIMEx_HallSensor_DeInit
+                0x0800031c                HAL_TIMEx_HallSensor_MspInit
+                0x0800032e                HAL_TIMEx_HallSensor_MspDeInit
+                0x08000340                HAL_TIMEx_HallSensor_Start
+                0x08000370                HAL_TIMEx_HallSensor_Stop
+                0x080003c0                HAL_TIMEx_HallSensor_Start_IT
+                0x08000400                HAL_TIMEx_HallSensor_Stop_IT
+                0x08000460                HAL_TIMEx_HallSensor_Start_DMA
+                0x08000508                HAL_TIMEx_HallSensor_Stop_DMA
+                0x08000568                HAL_TIMEx_OCN_Start
+                0x080005aa                HAL_TIMEx_OCN_Stop
+                0x0800062c                HAL_TIMEx_OCN_Start_IT
+                0x0800070a                HAL_TIMEx_OCN_Stop_IT
+                0x0800083e                HAL_TIMEx_OCN_Start_DMA
+                0x080009e0                HAL_TIMEx_OCN_Stop_DMA
+                0x08000af6                HAL_TIMEx_PWMN_Start
+                0x08000b38                HAL_TIMEx_PWMN_Stop
+                0x08000bba                HAL_TIMEx_PWMN_Start_IT
+                0x08000c96                HAL_TIMEx_PWMN_Stop_IT
+                0x08000dca                HAL_TIMEx_PWMN_Start_DMA
+                0x08000f6c                HAL_TIMEx_PWMN_Stop_DMA
+                0x08001082                HAL_TIMEx_OnePulseN_Start
+                0x080010b4                HAL_TIMEx_OnePulseN_Stop
+                0x08001136                HAL_TIMEx_OnePulseN_Start_IT
+                0x08001188                HAL_TIMEx_OnePulseN_Stop_IT
+                0x0800122a                HAL_TIMEx_ConfigCommutationEvent
+                0x080012c8                HAL_TIMEx_ConfigCommutationEvent_IT
+                0x08001376                HAL_TIMEx_ConfigCommutationEvent_DMA
+                0x0800143c                HAL_TIMEx_MasterConfigSynchronization
+                0x080014e4                HAL_TIMEx_ConfigBreakDeadTime
+                0x080015f4                HAL_TIMEx_RemapConfig
+                0x08001638                HAL_TIMEx_GroupChannel5
+                0x0800169c                HAL_TIMEx_CommutationCallback
+                0x080016ae                HAL_TIMEx_BreakCallback
+                0x080016c0                HAL_TIMEx_HallSensor_GetState
+                0x080016da                TIMEx_DMACommutationCplt
+                0x080016fe                HAL_TIM_ConfigOCrefClear
+                0x080018e0                HAL_TIM_OC_ConfigChannel
+                0x080019dc                HAL_TIM_PWM_ConfigChannel
+ .text          0x08001dac      0x2f0 ..\obj\stm32f7xx_hal.o
+                0x08001dac                HAL_Init
+                0x08001dc6                HAL_DeInit
+                0x08001e2c                HAL_MspDeInit
+                0x08001e38                HAL_InitTick
+                0x08001e70                HAL_IncTick
+                0x08001e8c                HAL_GetTick
+                0x08001ea0                HAL_Delay
+                0x08001ecc                HAL_SuspendTick
+                0x08001ee8                HAL_ResumeTick
+                0x08001f04                HAL_GetHalVersion
+                0x08001f18                HAL_GetREVID
+                0x08001f30                HAL_GetDEVID
+                0x08001f48                HAL_GetUIDw0
+                0x08001f5c                HAL_GetUIDw1
+                0x08001f70                HAL_GetUIDw2
+                0x08001f84                HAL_DBGMCU_EnableDBGSleepMode
+                0x08001fa0                HAL_DBGMCU_DisableDBGSleepMode
+                0x08001fbc                HAL_DBGMCU_EnableDBGStopMode
+                0x08001fd8                HAL_DBGMCU_DisableDBGStopMode
+                0x08001ff4                HAL_DBGMCU_EnableDBGStandbyMode
+                0x08002010                HAL_DBGMCU_DisableDBGStandbyMode
+                0x0800202c                HAL_EnableCompensationCell
+                0x08002048                HAL_DisableCompensationCell
+                0x08002064                HAL_EnableFMCMemorySwapping
+                0x08002080                HAL_DisableFMCMemorySwapping
+ .text          0x0800209c       0x68 ..\obj\startup_stm32f10x_hd.o
+                0x0800209c                Default_Reset_Handler
+                0x0800209c                Reset_Handler
+                0x080020f4                TIM8_CC_IRQHandler
+                0x080020f4                TIM1_CC_IRQHandler
+                0x080020f4                TIM6_IRQHandler
+                0x080020f4                PVD_IRQHandler
+                0x080020f4                SDIO_IRQHandler
+                0x080020f4                EXTI3_IRQHandler
+                0x080020f4                EXTI0_IRQHandler
+                0x080020f4                TIM8_TRG_COM_IRQHandler
+                0x080020f4                ADC1_2_IRQHandler
+                0x080020f4                SPI1_IRQHandler
+                0x080020f4                TAMPER_IRQHandler
+                0x080020f4                TIM8_UP_IRQHandler
+                0x080020f4                DMA2_Channel2_IRQHandler
+                0x080020f4                DMA1_Channel4_IRQHandler
+                0x080020f4                RTC_IRQHandler
+                0x080020f4                DMA1_Channel7_IRQHandler
+                0x080020f4                I2C2_EV_IRQHandler
+                0x080020f4                CAN1_RX1_IRQHandler
+                0x080020f4                UART5_IRQHandler
+                0x080020f4                ADC3_IRQHandler
+                0x080020f4                TIM4_IRQHandler
+                0x080020f4                DMA2_Channel1_IRQHandler
+                0x080020f4                I2C1_EV_IRQHandler
+                0x080020f4                DMA1_Channel6_IRQHandler
+                0x080020f4                UART4_IRQHandler
+                0x080020f4                RCC_IRQHandler
+                0x080020f4                TIM1_TRG_COM_IRQHandler
+                0x080020f4                DMA1_Channel1_IRQHandler
+                0x080020f4                EXTI15_10_IRQHandler
+                0x080020f4                EXTI2_IRQHandler
+                0x080020f4                TIM7_IRQHandler
+                0x080020f4                TIM5_IRQHandler
+                0x080020f4                EXTI9_5_IRQHandler
+                0x080020f4                SPI2_IRQHandler
+                0x080020f4                DMA1_Channel5_IRQHandler
+                0x080020f4                EXTI4_IRQHandler
+                0x080020f4                USB_LP_CAN1_RX0_IRQHandler
+                0x080020f4                USB_HP_CAN1_TX_IRQHandler
+                0x080020f4                DMA1_Channel3_IRQHandler
+                0x080020f4                FSMC_IRQHandler
+                0x080020f4                TIM1_UP_IRQHandler
+                0x080020f4                WWDG_IRQHandler
+                0x080020f4                TIM2_IRQHandler
+                0x080020f4                TIM1_BRK_IRQHandler
+                0x080020f4                EXTI1_IRQHandler
+                0x080020f4                RTCAlarm_IRQHandler
+                0x080020f4                DMA2_Channel4_5_IRQHandler
+                0x080020f4                I2C2_ER_IRQHandler
+                0x080020f4                DMA1_Channel2_IRQHandler
+                0x080020f4                TIM8_BRK_IRQHandler
+                0x080020f4                CAN1_SCE_IRQHandler
+                0x080020f4                FLASH_IRQHandler
+                0x080020f4                USART1_IRQHandler
+                0x080020f4                SPI3_IRQHandler
+                0x080020f4                I2C1_ER_IRQHandler
+                0x080020f4                USBWakeUp_IRQHandler
+                0x080020f4                DMA2_Channel3_IRQHandler
+ .text          0x08002104     0x1bf0 ..\obj\stm32f7xx_hal_uart.o
+                0x08002104                HAL_UART_Init
+                0x080021a6                HAL_HalfDuplex_Init
+                0x08002258                HAL_LIN_Init
+                0x08002320                HAL_MultiProcessor_Init
+                0x080023fa                HAL_RS485Ex_Init
+                0x080024d4                HAL_UART_DeInit
+                0x08002568                HAL_UART_Transmit
+                0x0800267e                HAL_UART_Receive
+                0x08002802                HAL_UART_Transmit_IT
+                0x0800288e                HAL_UART_Receive_IT
+                0x0800299a                HAL_UART_Transmit_DMA
+                0x08002a74                HAL_UART_Receive_DMA
+                0x08002b60                HAL_UART_DMAPause
+                0x08002c06                HAL_UART_DMAResume
+                0x08002cae                HAL_UART_DMAStop
+                0x08002d44                HAL_UART_IRQHandler
+                0x08002f50                UART_WaitOnFlagUntilTimeout
+                0x0800317e                HAL_UART_TxCpltCallback
+                0x08003190                HAL_UART_TxHalfCpltCallback
+                0x080031a2                HAL_UART_RxCpltCallback
+                0x080031b4                HAL_UART_RxHalfCpltCallback
+                0x080031c6                HAL_UART_ErrorCallback
+                0x080033ec                HAL_MultiProcessor_EnableMuteMode
+                0x0800343a                HAL_MultiProcessor_DisableMuteMode
+                0x08003488                HAL_MultiProcessor_EnterMuteMode
+                0x080034aa                HAL_UART_GetState
+                0x080034e4                HAL_UART_GetError
+                0x080034fa                UART_SetConfig
+                0x080039d4                UART_AdvFeatureConfig
+                0x08003b16                UART_CheckIdleState
+                0x08003b7c                HAL_HalfDuplex_EnableTransmitter
+                0x08003bde                HAL_HalfDuplex_EnableReceiver
+                0x08003c40                HAL_LIN_SendBreak
+                0x08003c92                HAL_MultiProcessorEx_AddressLength_Set
+ .text          0x08003cf4      0x67c ..\obj\stm32f7xx_hal_gpio.o
+                0x08003cf4                HAL_GPIO_Init
+                0x08004048                HAL_GPIO_DeInit
+                0x0800425c                HAL_GPIO_ReadPin
+                0x0800428a                HAL_GPIO_WritePin
+                0x080042ba                HAL_GPIO_TogglePin
+                0x080042dc                HAL_GPIO_LockPin
+                0x0800432a                HAL_GPIO_EXTI_IRQHandler
+                0x0800435c                HAL_GPIO_EXTI_Callback
+ .text          0x08004370      0xadc ..\obj\stm32f7xx_hal_rcc.o
+                0x08004370                HAL_RCC_DeInit
+                0x080043f4                HAL_RCC_OscConfig
+                0x080048d4                HAL_RCC_ClockConfig
+                0x08004a74                HAL_RCC_MCOConfig
+                0x08004b3c                HAL_RCC_EnableCSS
+                0x08004b58                HAL_RCC_DisableCSS
+                0x08004b74                HAL_RCC_GetSysClockFreq
+                0x08004c2c                HAL_RCC_GetHCLKFreq
+                0x08004c40                HAL_RCC_GetPCLK1Freq
+                0x08004c68                HAL_RCC_GetPCLK2Freq
+                0x08004c90                HAL_RCC_GetOscConfig
+                0x08004db8                HAL_RCC_GetClockConfig
+                0x08004e18                HAL_RCC_NMI_IRQHandler
+                0x08004e40                HAL_RCC_CSSCallback
+ .text          0x08004e4c     0x3f5c ..\obj\stm32f7xx_hal_tim.o
+                0x08004e4c                HAL_TIM_Base_Init
+                0x08004ea2                HAL_TIM_Base_DeInit
+                0x08004f26                HAL_TIM_Base_Start
+                0x08004f5a                HAL_TIM_Base_Stop
+                0x08004fae                HAL_TIM_Base_Start_IT
+                0x08004fe2                HAL_TIM_Base_Stop_IT
+                0x08005036                HAL_TIM_Base_Start_DMA
+                0x080050d0                HAL_TIM_Base_Stop_DMA
+                0x0800512c                HAL_TIM_OC_Init
+                0x08005182                HAL_TIM_OC_DeInit
+                0x080051e2                HAL_TIM_OC_MspInit
+                0x080051f4                HAL_TIM_OC_MspDeInit
+                0x08005206                HAL_TIM_OC_Start
+                0x08005270                HAL_TIM_OC_Stop
+                0x08005318                HAL_TIM_OC_Start_IT
+                0x0800540c                HAL_TIM_OC_Stop_IT
+                0x08005540                HAL_TIM_OC_Start_DMA
+                0x08005704                HAL_TIM_OC_Stop_DMA
+                0x08005840                HAL_TIM_PWM_Init
+                0x08005896                HAL_TIM_PWM_DeInit
+                0x080058f6                HAL_TIM_PWM_MspInit
+                0x08005908                HAL_TIM_PWM_MspDeInit
+                0x0800591a                HAL_TIM_PWM_Start
+                0x08005984                HAL_TIM_PWM_Stop
+                0x08005a34                HAL_TIM_PWM_Start_IT
+                0x08005b28                HAL_TIM_PWM_Stop_IT
+                0x08005c5c                HAL_TIM_PWM_Start_DMA
+                0x08005e20                HAL_TIM_PWM_Stop_DMA
+                0x08005f5c                HAL_TIM_IC_Init
+                0x08005fb2                HAL_TIM_IC_DeInit
+                0x08006012                HAL_TIM_IC_MspInit
+                0x08006024                HAL_TIM_IC_MspDeInit
+                0x08006036                HAL_TIM_IC_Start
+                0x08006068                HAL_TIM_IC_Stop
+                0x080060ba                HAL_TIM_IC_Start_IT
+                0x08006176                HAL_TIM_IC_Stop_IT
+                0x08006252                HAL_TIM_IC_Start_DMA
+                0x080063e4                HAL_TIM_IC_Stop_DMA
+                0x080064ca                HAL_TIM_OnePulse_Init
+                0x08006542                HAL_TIM_OnePulse_DeInit
+                0x080065a2                HAL_TIM_OnePulse_MspInit
+                0x080065b4                HAL_TIM_OnePulse_MspDeInit
+                0x080065c6                HAL_TIM_OnePulse_Start
+                0x0800662c                HAL_TIM_OnePulse_Stop
+                0x080066e4                HAL_TIM_OnePulse_Start_IT
+                0x0800676c                HAL_TIM_OnePulse_Stop_IT
+                0x08006844                HAL_TIM_Encoder_Init
+                0x08006974                HAL_TIM_Encoder_DeInit
+                0x080069d4                HAL_TIM_Encoder_MspInit
+                0x080069e6                HAL_TIM_Encoder_MspDeInit
+                0x080069f8                HAL_TIM_Encoder_Start
+                0x08006a66                HAL_TIM_Encoder_Stop
+                0x08006af4                HAL_TIM_Encoder_Start_IT
+                0x08006ba2                HAL_TIM_Encoder_Stop_IT
+                0x08006c76                HAL_TIM_Encoder_Start_DMA
+                0x08006e20                HAL_TIM_Encoder_Stop_DMA
+                0x08006ef4                HAL_TIM_IRQHandler
+                0x080071f0                HAL_TIM_IC_ConfigChannel
+                0x080074b4                HAL_TIM_OnePulse_ConfigChannel
+                0x08007638                HAL_TIM_DMABurst_WriteStart
+                0x0800781c                HAL_TIM_DMABurst_WriteStop
+                0x080078cc                HAL_TIM_DMABurst_ReadStart
+                0x08007ab0                HAL_TIM_DMABurst_ReadStop
+                0x08007b60                HAL_TIM_GenerateEvent
+                0x08007d00                HAL_TIM_ConfigClockSource
+                0x08007ec0                HAL_TIM_ConfigTI1Input
+                0x08007efa                HAL_TIM_SlaveConfigSynchronization
+                0x08008044                HAL_TIM_SlaveConfigSynchronization_IT
+                0x080080ae                HAL_TIM_ReadCapturedValue
+                0x08008152                HAL_TIM_PeriodElapsedCallback
+                0x08008164                HAL_TIM_OC_DelayElapsedCallback
+                0x08008176                HAL_TIM_IC_CaptureCallback
+                0x08008188                HAL_TIM_PWM_PulseFinishedCallback
+                0x0800819a                HAL_TIM_TriggerCallback
+                0x080081ac                HAL_TIM_ErrorCallback
+                0x080081be                HAL_TIM_Base_GetState
+                0x080081d8                HAL_TIM_OC_GetState
+                0x080081f2                HAL_TIM_PWM_GetState
+                0x0800820c                HAL_TIM_IC_GetState
+                0x08008226                HAL_TIM_OnePulse_GetState
+                0x08008240                HAL_TIM_Encoder_GetState
+                0x0800825a                TIM_DMAError
+                0x0800827e                TIM_DMADelayPulseCplt
+                0x080082ee                TIM_DMACaptureCplt
+                0x080083a6                TIM_Base_SetConfig
+                0x08008504                TIM_OC1_SetConfig
+                0x080085ec                TIM_OC2_SetConfig
+                0x080086e0                TIM_OC3_SetConfig
+                0x080087d0                TIM_OC4_SetConfig
+                0x080089b0                TIM_TI1_SetConfig
+                0x08008d22                TIM_ETR_SetConfig
+                0x08008d64                TIM_CCxChannelCmd
+ .text          0x08008da8      0xc50 ..\obj\stm32f7xx_hal_rcc_ex.o
+                0x08008da8                HAL_RCCEx_PeriphCLKConfig
+                0x08009584                HAL_RCCEx_GetPeriphCLKConfig
+                0x08009798                HAL_RCCEx_GetPeriphCLKFreq
+ .text          0x080099f8      0x134 ..\obj\stm32f7xx_it.o
+                0x080099f8                NMI_Handler
+                0x08009a04                HardFault_Handler
+                0x08009a0a                MemManage_Handler
+                0x08009a10                BusFault_Handler
+                0x08009a16                UsageFault_Handler
+                0x08009a1c                SVC_Handler
+                0x08009a28                DebugMon_Handler
+                0x08009a34                PendSV_Handler
+                0x08009a40                SysTick_Handler
+                0x08009a50                TIM3_IRQHandler
+                0x08009a6c                USART2_IRQHandler
+                0x08009b18                USART3_IRQHandler
+ .text          0x08009b2c      0x5f8 ..\obj\stm32f7xx_hal_cortex.o
+                0x08009e98                HAL_NVIC_SetPriorityGrouping
+                0x08009eae                HAL_NVIC_SetPriority
+                0x08009ee6                HAL_NVIC_EnableIRQ
+                0x08009f02                HAL_NVIC_DisableIRQ
+                0x08009f1e                HAL_NVIC_SystemReset
+                0x08009f2a                HAL_SYSTICK_Config
+                0x08009f42                HAL_MPU_Disable
+                0x08009f6c                HAL_MPU_Enable
+                0x08009fa4                HAL_MPU_ConfigRegion
+                0x0800a028                HAL_NVIC_GetPriorityGrouping
+                0x0800a036                HAL_NVIC_GetPriority
+                0x0800a062                HAL_NVIC_SetPendingIRQ
+                0x0800a07e                HAL_NVIC_GetPendingIRQ
+                0x0800a09c                HAL_NVIC_ClearPendingIRQ
+                0x0800a0b8                HAL_NVIC_GetActive
+                0x0800a0d6                HAL_SYSTICK_CLKSourceConfig
+                0x0800a10c                HAL_SYSTICK_IRQHandler
+                0x0800a118                HAL_SYSTICK_Callback
+ .text          0x0800a124      0x150 ..\obj\system_stm32f7xx.o
+                0x0800a124                SystemInit
+                0x0800a180                SystemCoreClockUpdate
+ .text          0x0800a274      0xc90 ..\obj\stm32f7xx_hal_dma.o
+                0x0800a274                HAL_DMA_Init
+                0x0800a3d0                HAL_DMA_DeInit
+                0x0800a468                HAL_DMA_Start
+                0x0800a4de                HAL_DMA_Start_IT
+                0x0800a59e                HAL_DMA_Abort
+                0x0800a67e                HAL_DMA_Abort_IT
+                0x0800a6c0                HAL_DMA_PollForTransfer
+                0x0800a888                HAL_DMA_IRQHandler
+                0x0800aba6                HAL_DMA_RegisterCallback
+                0x0800ac4c                HAL_DMA_UnRegisterCallback
+                0x0800ad1e                HAL_DMA_GetState
+                0x0800ad38                HAL_DMA_GetError
+ .text          0x0800af04      0xa08 ..\obj\main.o
+                0x0800af04                Parser
+                0x0800af4a                main
+                0x0800b498                SystemClock_Config
+                0x0800b900                _Error_Handler
+ .text          0x0800b90c      0x2bc ..\obj\stm32f7xx_hal_msp.o
+                0x0800b90c                HAL_MspInit
+                0x0800b96e                HAL_TIM_Base_MspInit
+                0x0800b9dc                HAL_TIM_MspPostInit
+                0x0800ba40                HAL_TIM_Base_MspDeInit
+                0x0800ba8c                HAL_UART_MspInit
+                0x0800bb58                HAL_UART_MspDeInit
+ .text          0x0800bbc8      0x370 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m\libgcc.a(_arm_addsubdf3.o)
+                0x0800bbc8                __aeabi_drsub
+                0x0800bbd0                __aeabi_dsub
+                0x0800bbd0                __subdf3
+                0x0800bbd4                __aeabi_dadd
+                0x0800bbd4                __adddf3
+                0x0800be4c                __floatunsidf
+                0x0800be4c                __aeabi_ui2d
+                0x0800be6c                __floatsidf
+                0x0800be6c                __aeabi_i2d
+                0x0800be90                __aeabi_f2d
+                0x0800be90                __extendsfdf2
+                0x0800becc                __floatundidf
+                0x0800becc                __aeabi_ul2d
+                0x0800bedc                __floatdidf
+                0x0800bedc                __aeabi_l2d
+ .text          0x0800bf38      0x424 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m\libgcc.a(_arm_muldivdf3.o)
+                0x0800bf38                __aeabi_dmul
+                0x0800bf38                __muldf3
+                0x0800c18c                __divdf3
+                0x0800c18c                __aeabi_ddiv
+ .text          0x0800c35c       0x50 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m\libgcc.a(_arm_fixdfsi.o)
+                0x0800c35c                __aeabi_d2iz
+                0x0800c35c                __fixdfsi
+ .text.startup.register_fini
+                0x0800c3ac       0x14 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-__call_atexit.o)
+ .text.atexit   0x0800c3c0        0xc c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-atexit.o)
+                0x0800c3c0                atexit
+ .text.__libc_fini_array
+                0x0800c3cc       0x34 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-fini.o)
+                0x0800c3cc                __libc_fini_array
+ .text.__retarget_lock_acquire_recursive
+                0x0800c400        0x4 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-lock.o)
+                0x0800c400                __retarget_lock_acquire_recursive
+ .text.__retarget_lock_release_recursive
+                0x0800c404        0x4 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-lock.o)
+                0x0800c404                __retarget_lock_release_recursive
+ .text.__register_exitproc
+                0x0800c408       0xc4 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-__atexit.o)
+                0x0800c408                __register_exitproc
+ *(.init)
+ .init          0x0800c4cc        0x4 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/crti.o
+                0x0800c4cc                _init
+ .init          0x0800c4d0        0x8 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/crtn.o
+ *(.fini)
+ .fini          0x0800c4d8        0x4 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/crti.o
+                0x0800c4d8                _fini
+ .fini          0x0800c4dc        0x8 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/crtn.o
+ *crtbegin.o(.ctors)
+ *crtbegin?.o(.ctors)
+ *(EXCLUDE_FILE(*crtend.o *crtend?.o) .ctors)
+ *(SORT(.ctors.*))
+ *(.ctors)
+ *crtbegin.o(.dtors)
+ *crtbegin?.o(.dtors)
+ *(EXCLUDE_FILE(*crtend.o *crtend?.o) .dtors)
+ *(SORT(.dtors.*))
+ *(.dtors)
+ *(.rodata*)
+ .rodata        0x0800c4e4       0x18 ..\obj\system_stm32f7xx.o
+                0x0800c4e4                AHBPrescTable
+                0x0800c4f4                APBPrescTable
+ .rodata        0x0800c4fc        0x8 ..\obj\stm32f7xx_hal_dma.o
+ .rodata        0x0800c504       0x44 ..\obj\main.o
+ .rodata._global_impure_ptr
+                0x0800c548        0x4 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-impure.o)
+                0x0800c548                _global_impure_ptr
+ *(.eh_fram e*)
+
+.eh_frame       0x0800c54c        0x0
+ .eh_frame      0x0800c54c        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/crtbegin.o
+
+.glue_7         0x0800c54c        0x0
+ .glue_7        0x0800c54c        0x0 linker stubs
+
+.glue_7t        0x0800c54c        0x0
+ .glue_7t       0x0800c54c        0x0 linker stubs
+
+.vfp11_veneer   0x0800c54c        0x0
+ .vfp11_veneer  0x0800c54c        0x0 linker stubs
+
+.v4_bx          0x0800c54c        0x0
+ .v4_bx         0x0800c54c        0x0 linker stubs
+
+.iplt           0x0800c54c        0x0
+ .iplt          0x0800c54c        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/crtbegin.o
+
+.rel.dyn        0x0800c54c        0x0
+ .rel.iplt      0x0800c54c        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/crtbegin.o
+
+.ARM.extab
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+                0x0800c54c                __exidx_start = .
+
+.ARM.exidx
+ *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+                0x0800c54c                __exidx_end = .
+                0x0800c54c                __etext = .
+                0x0800c54c                _sidata = __etext
+
+.data           0x20000000      0x444 load address 0x0800c54c
+                0x20000000                __data_start__ = .
+                0x20000000                _sdata = __data_start__
+ *(vtable)
+ *(.data*)
+ .data          0x20000000        0x4 ..\obj\system_stm32f7xx.o
+                0x20000000                SystemCoreClock
+ *fill*         0x20000004        0x4 
+ .data.impure_data
+                0x20000008      0x428 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-impure.o)
+ .data.__atexit_recursive_mutex
+                0x20000430        0x4 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-__call_atexit.o)
+                0x20000430                __atexit_recursive_mutex
+                0x20000434                . = ALIGN (0x4)
+                0x20000434                PROVIDE (__preinit_array_start, .)
+ *(.preinit_array)
+                0x20000434                PROVIDE (__preinit_array_end, .)
+                0x20000434                . = ALIGN (0x4)
+                0x20000434                PROVIDE (__init_array_start, .)
+ *(SORT(.init_array.*))
+ .init_array.00000
+                0x20000434        0x4 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-__call_atexit.o)
+ *(.init_array)
+ .init_array    0x20000438        0x4 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/crtbegin.o
+                0x2000043c                PROVIDE (__init_array_end, .)
+                0x2000043c                . = ALIGN (0x4)
+                0x2000043c                PROVIDE (__fini_array_start, .)
+ *(SORT(.fini_array.*))
+ *(.fini_array)
+ .fini_array    0x2000043c        0x4 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/crtbegin.o
+                0x20000440                PROVIDE (__fini_array_end, .)
+ *(.jcr*)
+ .jcr           0x20000440        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/crtbegin.o
+ .jcr           0x20000440        0x4 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/crtend.o
+                0x20000444                . = ALIGN (0x4)
+                0x20000444                __data_end__ = .
+                0x20000444                _edata = __data_end__
+
+.igot.plt       0x20000444        0x0 load address 0x0800c990
+ .igot.plt      0x20000444        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/crtbegin.o
+
+.bss            0x20000444      0x2e0 load address 0x0800c990
+                0x20000444                . = ALIGN (0x4)
+                0x20000444                __bss_start__ = .
+                0x20000444                _sbss = __bss_start__
+ *(.bss*)
+ .bss           0x20000444       0x1c c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/crtbegin.o
+ .bss           0x20000460        0x1 ..\obj\stm32f7xx_it.o
+                0x20000460                iB
+ *fill*         0x20000461        0x3 
+ .bss           0x20000464        0xc ..\obj\main.o
+                0x20000464                Radio_flag
+                0x20000468                Left_Power
+                0x2000046c                Right_Power
+ *(COMMON)
+ COMMON         0x20000470        0x4 ..\obj\stm32f7xx_hal.o
+                0x20000470                uwTick
+ COMMON         0x20000474        0x1 ..\obj\stm32f7xx_it.o
+                0x20000474                byte
+ *fill*         0x20000475        0x3 
+ COMMON         0x20000478      0x288 ..\obj\main.o
+                0x20000478                CH
+                0x20000498                Radio_Data
+                0x20000592                Start_byte
+                0x20000594                huart3
+                0x20000604                DCH1
+                0x20000605                Frame_lost
+                0x20000608                htim3
+                0x20000648                i
+                0x2000064c                DCH2
+                0x2000064d                failsafe
+                0x20000650                htim2
+                0x20000690                huart2
+ COMMON         0x20000700       0x21 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-lock.o)
+                0x20000700                __lock___atexit_recursive_mutex
+                0x20000704                __lock___arc4random_mutex
+                0x20000708                __lock___env_recursive_mutex
+                0x2000070c                __lock___sinit_recursive_mutex
+                0x20000710                __lock___malloc_recursive_mutex
+                0x20000714                __lock___at_quick_exit_mutex
+                0x20000718                __lock___dd_hash_mutex
+                0x2000071c                __lock___tz_mutex
+                0x20000720                __lock___sfp_recursive_mutex
+                0x20000724                . = ALIGN (0x4)
+ *fill*         0x20000721        0x3 
+                0x20000724                __bss_end__ = .
+                0x20000724                _ebss = __bss_end__
+
+.heap           0x20000724        0x0
+                0x20000724                __end__ = .
+                0x20000724                _end = __end__
+                0x20000724                end = __end__
+ *(.heap*)
+                0x20000724                __HeapLimit = .
+
+.co_stack       0x20000724      0x404 load address 0x0800cc70
+                0x20000728                . = ALIGN (0x8)
+ *fill*         0x20000724        0x4 
+ *(.co_stack .co_stack.*)
+ .co_stack      0x20000728      0x400 ..\obj\startup_stm32f10x_hd.o
+                0x20000728                pulStack
+                0x20050000                __StackTop = (ORIGIN (ram) + LENGTH (ram))
+                0x2004fbfc                __StackLimit = (__StackTop - SIZEOF (.co_stack))
+                0x20050000                PROVIDE (__stack, __StackTop)
+                0x00000001                ASSERT ((__StackLimit >= __HeapLimit), region ram  overflowed with stack)
+LOAD ..\obj\stm32f7xx_hal_tim_ex.o
+LOAD ..\obj\stm32f7xx_hal_i2c.o
+LOAD ..\obj\stm32f7xx_hal_flash_ex.o
+LOAD ..\obj\stm32f7xx_hal.o
+LOAD ..\obj\startup_stm32f10x_hd.o
+LOAD ..\obj\stm32f7xx_hal_i2c_ex.o
+LOAD ..\obj\stm32f7xx_hal_flash.o
+LOAD ..\obj\stm32f7xx_hal_uart.o
+LOAD ..\obj\stm32f7xx_hal_gpio.o
+LOAD ..\obj\stm32f7xx_hal_rcc.o
+LOAD ..\obj\stm32f7xx_hal_tim.o
+LOAD ..\obj\stm32f7xx_hal_rcc_ex.o
+LOAD ..\obj\stm32f7xx_it.o
+LOAD ..\obj\stm32f7xx_hal_cortex.o
+LOAD ..\obj\system_stm32f7xx.o
+LOAD ..\obj\stm32f7xx_hal_pwr_ex.o
+LOAD ..\obj\stm32f7xx_hal_dma.o
+LOAD ..\obj\stm32f7xx_hal_dma_ex.o
+LOAD ..\obj\stm32f7xx_hal_pwr.o
+LOAD ..\obj\main.o
+LOAD ..\obj\stm32f7xx_hal_msp.o
+START GROUP
+LOAD c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m\libgcc.a
+LOAD c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a
+LOAD c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libc.a
+END GROUP
+LOAD c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/crtend.o
+LOAD c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/crtn.o
+OUTPUT(Robofest.elf elf32-littlearm)
+
+.ARM.attributes
+                0x00000000       0x2a
+ .ARM.attributes
+                0x00000000       0x1e c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/crti.o
+ .ARM.attributes
+                0x0000001e       0x2e c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/crtbegin.o
+ .ARM.attributes
+                0x0000004c       0x33 ..\obj\stm32f7xx_hal_tim_ex.o
+ .ARM.attributes
+                0x0000007f       0x33 ..\obj\stm32f7xx_hal.o
+ .ARM.attributes
+                0x000000b2       0x33 ..\obj\startup_stm32f10x_hd.o
+ .ARM.attributes
+                0x000000e5       0x33 ..\obj\stm32f7xx_hal_uart.o
+ .ARM.attributes
+                0x00000118       0x33 ..\obj\stm32f7xx_hal_gpio.o
+ .ARM.attributes
+                0x0000014b       0x33 ..\obj\stm32f7xx_hal_rcc.o
+ .ARM.attributes
+                0x0000017e       0x33 ..\obj\stm32f7xx_hal_tim.o
+ .ARM.attributes
+                0x000001b1       0x33 ..\obj\stm32f7xx_hal_rcc_ex.o
+ .ARM.attributes
+                0x000001e4       0x33 ..\obj\stm32f7xx_it.o
+ .ARM.attributes
+                0x00000217       0x33 ..\obj\stm32f7xx_hal_cortex.o
+ .ARM.attributes
+                0x0000024a       0x33 ..\obj\system_stm32f7xx.o
+ .ARM.attributes
+                0x0000027d       0x33 ..\obj\stm32f7xx_hal_dma.o
+ .ARM.attributes
+                0x000002b0       0x33 ..\obj\main.o
+ .ARM.attributes
+                0x000002e3       0x33 ..\obj\stm32f7xx_hal_msp.o
+ .ARM.attributes
+                0x00000316       0x1e c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m\libgcc.a(_arm_addsubdf3.o)
+ .ARM.attributes
+                0x00000334       0x1e c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m\libgcc.a(_arm_muldivdf3.o)
+ .ARM.attributes
+                0x00000352       0x1e c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m\libgcc.a(_arm_fixdfsi.o)
+ .ARM.attributes
+                0x00000370       0x2e c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-impure.o)
+ .ARM.attributes
+                0x0000039e       0x2e c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-__call_atexit.o)
+ .ARM.attributes
+                0x000003cc       0x2e c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-atexit.o)
+ .ARM.attributes
+                0x000003fa       0x2e c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-fini.o)
+ .ARM.attributes
+                0x00000428       0x2e c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-lock.o)
+ .ARM.attributes
+                0x00000456       0x2e c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-__atexit.o)
+ .ARM.attributes
+                0x00000484       0x2e c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/crtend.o
+ .ARM.attributes
+                0x000004b2       0x1e c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/crtn.o
+
+.comment        0x00000000       0x7f
+ .comment       0x00000000       0x7f ..\obj\stm32f7xx_hal_tim_ex.o
+                                 0x80 (size before relaxing)
+ .comment       0x0000007f       0x80 ..\obj\stm32f7xx_hal.o
+ .comment       0x0000007f       0x80 ..\obj\startup_stm32f10x_hd.o
+ .comment       0x0000007f       0x80 ..\obj\stm32f7xx_hal_uart.o
+ .comment       0x0000007f       0x80 ..\obj\stm32f7xx_hal_gpio.o
+ .comment       0x0000007f       0x80 ..\obj\stm32f7xx_hal_rcc.o
+ .comment       0x0000007f       0x80 ..\obj\stm32f7xx_hal_tim.o
+ .comment       0x0000007f       0x80 ..\obj\stm32f7xx_hal_rcc_ex.o
+ .comment       0x0000007f       0x80 ..\obj\stm32f7xx_it.o
+ .comment       0x0000007f       0x80 ..\obj\stm32f7xx_hal_cortex.o
+ .comment       0x0000007f       0x80 ..\obj\system_stm32f7xx.o
+ .comment       0x0000007f       0x80 ..\obj\stm32f7xx_hal_dma.o
+ .comment       0x0000007f       0x80 ..\obj\main.o
+ .comment       0x0000007f       0x80 ..\obj\stm32f7xx_hal_msp.o
+
+.debug_info     0x00000000    0x11a4c
+ .debug_info    0x00000000     0x1acd ..\obj\stm32f7xx_hal_tim_ex.o
+ .debug_info    0x00001acd     0x110b ..\obj\stm32f7xx_hal.o
+ .debug_info    0x00002bd8      0x10b ..\obj\startup_stm32f10x_hd.o
+ .debug_info    0x00002ce3     0x1b87 ..\obj\stm32f7xx_hal_uart.o
+ .debug_info    0x0000486a      0xfad ..\obj\stm32f7xx_hal_gpio.o
+ .debug_info    0x00005817     0x10ce ..\obj\stm32f7xx_hal_rcc.o
+ .debug_info    0x000068e5     0x2a6a ..\obj\stm32f7xx_hal_tim.o
+ .debug_info    0x0000934f      0xeac ..\obj\stm32f7xx_hal_rcc_ex.o
+ .debug_info    0x0000a1fb     0x124c ..\obj\stm32f7xx_it.o
+ .debug_info    0x0000b447     0x1814 ..\obj\stm32f7xx_hal_cortex.o
+ .debug_info    0x0000cc5b      0x6e3 ..\obj\system_stm32f7xx.o
+ .debug_info    0x0000d33e     0x1133 ..\obj\stm32f7xx_hal_dma.o
+ .debug_info    0x0000e471     0x1e29 ..\obj\main.o
+ .debug_info    0x0001029a     0x17b2 ..\obj\stm32f7xx_hal_msp.o
+
+.debug_abbrev   0x00000000     0x2265
+ .debug_abbrev  0x00000000      0x2c0 ..\obj\stm32f7xx_hal_tim_ex.o
+ .debug_abbrev  0x000002c0      0x29e ..\obj\stm32f7xx_hal.o
+ .debug_abbrev  0x0000055e       0xb6 ..\obj\startup_stm32f10x_hd.o
+ .debug_abbrev  0x00000614      0x2ec ..\obj\stm32f7xx_hal_uart.o
+ .debug_abbrev  0x00000900      0x284 ..\obj\stm32f7xx_hal_gpio.o
+ .debug_abbrev  0x00000b84      0x2e0 ..\obj\stm32f7xx_hal_rcc.o
+ .debug_abbrev  0x00000e64      0x2e3 ..\obj\stm32f7xx_hal_tim.o
+ .debug_abbrev  0x00001147      0x25b ..\obj\stm32f7xx_hal_rcc_ex.o
+ .debug_abbrev  0x000013a2      0x21e ..\obj\stm32f7xx_it.o
+ .debug_abbrev  0x000015c0      0x39a ..\obj\stm32f7xx_hal_cortex.o
+ .debug_abbrev  0x0000195a      0x128 ..\obj\system_stm32f7xx.o
+ .debug_abbrev  0x00001a82      0x2be ..\obj\stm32f7xx_hal_dma.o
+ .debug_abbrev  0x00001d40      0x2ec ..\obj\main.o
+ .debug_abbrev  0x0000202c      0x239 ..\obj\stm32f7xx_hal_msp.o
+
+.debug_aranges  0x00000000      0x1c0
+ .debug_aranges
+                0x00000000       0x20 ..\obj\stm32f7xx_hal_tim_ex.o
+ .debug_aranges
+                0x00000020       0x20 ..\obj\stm32f7xx_hal.o
+ .debug_aranges
+                0x00000040       0x20 ..\obj\startup_stm32f10x_hd.o
+ .debug_aranges
+                0x00000060       0x20 ..\obj\stm32f7xx_hal_uart.o
+ .debug_aranges
+                0x00000080       0x20 ..\obj\stm32f7xx_hal_gpio.o
+ .debug_aranges
+                0x000000a0       0x20 ..\obj\stm32f7xx_hal_rcc.o
+ .debug_aranges
+                0x000000c0       0x20 ..\obj\stm32f7xx_hal_tim.o
+ .debug_aranges
+                0x000000e0       0x20 ..\obj\stm32f7xx_hal_rcc_ex.o
+ .debug_aranges
+                0x00000100       0x20 ..\obj\stm32f7xx_it.o
+ .debug_aranges
+                0x00000120       0x20 ..\obj\stm32f7xx_hal_cortex.o
+ .debug_aranges
+                0x00000140       0x20 ..\obj\system_stm32f7xx.o
+ .debug_aranges
+                0x00000160       0x20 ..\obj\stm32f7xx_hal_dma.o
+ .debug_aranges
+                0x00000180       0x20 ..\obj\main.o
+ .debug_aranges
+                0x000001a0       0x20 ..\obj\stm32f7xx_hal_msp.o
+
+.debug_line     0x00000000     0x4e4c
+ .debug_line    0x00000000      0x87d ..\obj\stm32f7xx_hal_tim_ex.o
+ .debug_line    0x0000087d      0x3ad ..\obj\stm32f7xx_hal.o
+ .debug_line    0x00000c2a       0x8a ..\obj\startup_stm32f10x_hd.o
+ .debug_line    0x00000cb4      0xa29 ..\obj\stm32f7xx_hal_uart.o
+ .debug_line    0x000016dd      0x502 ..\obj\stm32f7xx_hal_gpio.o
+ .debug_line    0x00001bdf      0x526 ..\obj\stm32f7xx_hal_rcc.o
+ .debug_line    0x00002105     0x1007 ..\obj\stm32f7xx_hal_tim.o
+ .debug_line    0x0000310c      0x4cc ..\obj\stm32f7xx_hal_rcc_ex.o
+ .debug_line    0x000035d8      0x3ab ..\obj\stm32f7xx_it.o
+ .debug_line    0x00003983      0x4ab ..\obj\stm32f7xx_hal_cortex.o
+ .debug_line    0x00003e2e      0x245 ..\obj\system_stm32f7xx.o
+ .debug_line    0x00004073      0x56c ..\obj\stm32f7xx_hal_dma.o
+ .debug_line    0x000045df      0x497 ..\obj\main.o
+ .debug_line    0x00004a76      0x3d6 ..\obj\stm32f7xx_hal_msp.o
+
+.debug_str      0x00000000     0x4336
+ .debug_str     0x00000000     0x1114 ..\obj\stm32f7xx_hal_tim_ex.o
+                               0x11e7 (size before relaxing)
+ .debug_str     0x00001114      0x9a4 ..\obj\stm32f7xx_hal.o
+                                0xf8b (size before relaxing)
+ .debug_str     0x00001ab8       0xb6 ..\obj\startup_stm32f10x_hd.o
+                                0x14b (size before relaxing)
+ .debug_str     0x00001b6e      0x801 ..\obj\stm32f7xx_hal_uart.o
+                               0x11cd (size before relaxing)
+ .debug_str     0x0000236f      0x1d1 ..\obj\stm32f7xx_hal_gpio.o
+                                0x939 (size before relaxing)
+ .debug_str     0x00002540      0x336 ..\obj\stm32f7xx_hal_rcc.o
+                                0xacc (size before relaxing)
+ .debug_str     0x00002876      0xb91 ..\obj\stm32f7xx_hal_tim.o
+                               0x17ae (size before relaxing)
+ .debug_str     0x00003407      0x38f ..\obj\stm32f7xx_hal_rcc_ex.o
+                                0xab1 (size before relaxing)
+ .debug_str     0x00003796      0x13a ..\obj\stm32f7xx_it.o
+                                0xd93 (size before relaxing)
+ .debug_str     0x000038d0      0x509 ..\obj\stm32f7xx_hal_cortex.o
+                               0x11c9 (size before relaxing)
+ .debug_str     0x00003dd9       0x7b ..\obj\system_stm32f7xx.o
+                                0x43a (size before relaxing)
+ .debug_str     0x00003e54      0x344 ..\obj\stm32f7xx_hal_dma.o
+                                0xb96 (size before relaxing)
+ .debug_str     0x00004198      0x12f ..\obj\main.o
+                               0x19c6 (size before relaxing)
+ .debug_str     0x000042c7       0x6f ..\obj\stm32f7xx_hal_msp.o
+                               0x1455 (size before relaxing)
+
+.debug_frame    0x00000000     0x31ec
+ .debug_frame   0x00000000      0x65c ..\obj\stm32f7xx_hal_tim_ex.o
+ .debug_frame   0x0000065c      0x350 ..\obj\stm32f7xx_hal.o
+ .debug_frame   0x000009ac       0x4c ..\obj\startup_stm32f10x_hd.o
+ .debug_frame   0x000009f8      0x70c ..\obj\stm32f7xx_hal_uart.o
+ .debug_frame   0x00001104      0x14c ..\obj\stm32f7xx_hal_gpio.o
+ .debug_frame   0x00001250      0x1ec ..\obj\stm32f7xx_hal_rcc.o
+ .debug_frame   0x0000143c      0xfb4 ..\obj\stm32f7xx_hal_tim.o
+ .debug_frame   0x000023f0       0x88 ..\obj\stm32f7xx_hal_rcc_ex.o
+ .debug_frame   0x00002478      0x160 ..\obj\stm32f7xx_it.o
+ .debug_frame   0x000025d8      0x498 ..\obj\stm32f7xx_hal_cortex.o
+ .debug_frame   0x00002a70       0x58 ..\obj\system_stm32f7xx.o
+ .debug_frame   0x00002ac8      0x250 ..\obj\stm32f7xx_hal_dma.o
+ .debug_frame   0x00002d18      0x140 ..\obj\main.o
+ .debug_frame   0x00002e58       0xe0 ..\obj\stm32f7xx_hal_msp.o
+ .debug_frame   0x00002f38       0xac c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m\libgcc.a(_arm_addsubdf3.o)
+ .debug_frame   0x00002fe4       0x50 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m\libgcc.a(_arm_muldivdf3.o)
+ .debug_frame   0x00003034       0x24 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m\libgcc.a(_arm_fixdfsi.o)
+ .debug_frame   0x00003058       0x5c c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-__call_atexit.o)
+ .debug_frame   0x000030b4       0x20 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-atexit.o)
+ .debug_frame   0x000030d4       0x34 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-fini.o)
+ .debug_frame   0x00003108       0xb0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-lock.o)
+ .debug_frame   0x000031b8       0x34 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-__atexit.o)

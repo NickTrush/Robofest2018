@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -g2 -Map=Robofest.map -O0 --gc-sections -LC:\Users\NickTrush\AppData\Roaming\CooCox\CoIDE\configuration\ProgramData\Robofest -TC:\Users\NickTrush\AppData\Roaming\CooCox\CoIDE\configuration\ProgramData\Robofest/link.ld -g">
+      <target file="Robofest.elf" lastModified="16193db51bf">
+         <source file="..\obj\stm32f7xx_hal_tim_ex.o" lastModified="16193db48be"/>
+         <source file="..\obj\stm32f7xx_hal_i2c.o" lastModified="16193daf9ca"/>
+         <source file="..\obj\stm32f7xx_hal_flash_ex.o" lastModified="16193daeff8"/>
+         <source file="..\obj\stm32f7xx_hal.o" lastModified="16193db30f5"/>
+         <source file="..\obj\startup_stm32f10x_hd.o" lastModified="16193db064a"/>
+         <source file="..\obj\stm32f7xx_hal_i2c_ex.o" lastModified="16193db3e6a"/>
+         <source file="..\obj\stm32f7xx_hal_flash.o" lastModified="16193db1070"/>
+         <source file="..\obj\stm32f7xx_hal_uart.o" lastModified="16193db1ea3"/>
+         <source file="..\obj\stm32f7xx_hal_gpio.o" lastModified="16193db3a19"/>
+         <source file="..\obj\stm32f7xx_hal_rcc.o" lastModified="16193db3573"/>
+         <source file="..\obj\stm32f7xx_hal_tim.o" lastModified="16193db0bda"/>
+         <source file="..\obj\stm32f7xx_hal_rcc_ex.o" lastModified="16193db2336"/>
+         <source file="..\obj\stm32f7xx_it.o" lastModified="16193db14c7"/>
+         <source file="..\obj\stm32f7xx_hal_cortex.o" lastModified="16193db2c8d"/>
+         <source file="..\obj\system_stm32f7xx.o" lastModified="16193db026c"/>
+         <source file="..\obj\stm32f7xx_hal_pwr_ex.o" lastModified="16193db4356"/>
+         <source file="..\obj\stm32f7xx_hal_dma.o" lastModified="16193db4d9a"/>
+         <source file="..\obj\stm32f7xx_hal_dma_ex.o" lastModified="16193daf467"/>
+         <source file="..\obj\stm32f7xx_hal_pwr.o" lastModified="16193db27fe"/>
+         <source file="..\obj\main.o" lastModified="16193db195a"/>
+         <source file="..\obj\stm32f7xx_hal_msp.o" lastModified="16193dafe4c"/>
+      </target>
+   </processor>
+</history>

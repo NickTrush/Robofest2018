@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="arm-none-eabi-gcc noversion nomachine -mcpu=cortex-m7 -mthumb -g2 -Wall -O0 -ansi -std=gnu11 -c -DSTM32F746ZG -DSTM32F7xx -DUSE_HAL_DRIVERS -DSTM32F746xG -DSTM32F746xx -I..\..\..\..\..\..\..\CoIDE\workspace\Robofest\RobofestCube -I..\..\..\..\..\..\..\CoIDE\workspace\Robofest\RobofestCube\Drivers\CMSIS\Device\ST\STM32F7xx\Include -I..\..\..\..\..\..\..\CoIDE\workspace\Robofest\RobofestCube\Drivers\STM32F7xx_HAL_Driver -I..\..\..\..\..\..\..\CoIDE\workspace\Robofest\RobofestCube\Drivers\STM32F7xx_HAL_Driver\Inc -I..\..\..\..\..\..\..\CoIDE\workspace\Robofest\RobofestCube\Drivers -I..\..\..\..\..\..\..\CoIDE\workspace\Robofest -I..\..\..\..\..\..\..\CoIDE\workspace\Robofest\RobofestCube\Inc -I..\..\..\..\..\..\..\CoIDE\workspace\Robofest\RobofestCube\Drivers\CMSIS\Include -I..\..\..\..\..\..\..\CoIDE\workspace\Robofest\RobofestCube\Drivers\CMSIS\Device\ST -I..\..\..\..\..\..\..\CoIDE\workspace\Robofest\RobofestCube\Drivers\CMSIS\Device\ST\STM32F7xx -I..\..\..\..\..\..\..\CoIDE\workspace\Robofest\RobofestCube\Drivers\CMSIS">
+      <target file="stm32f7xx_it.o" lastModified="16193db14c7">
+         <source file="..\..\..\RobofestCube\Src\stm32f7xx_it.c" lastModified="1619393f707"/>
+      </target>
+      <target file="stm32f7xx_hal.o" lastModified="16193db30f5">
+         <source file="..\..\..\RobofestCube\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal.c" lastModified="15f4632a58d"/>
+      </target>
+      <target file="stm32f7xx_hal_uart.o" lastModified="16193db1ea3">
+         <source file="..\..\..\RobofestCube\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_uart.c" lastModified="15f4632a8ee"/>
+      </target>
+      <target file="stm32f7xx_hal_msp.o" lastModified="16193dafe4c">
+         <source file="..\..\..\RobofestCube\Src\stm32f7xx_hal_msp.c" lastModified="161937e4d36"/>
+      </target>
+      <target file="system_stm32f7xx.o" lastModified="16193db026c">
+         <source file="..\..\..\RobofestCube\Src\system_stm32f7xx.c" lastModified="15f4631b720"/>
+      </target>
+      <target file="stm32f7xx_hal_flash.o" lastModified="16193db1070">
+         <source file="..\..\..\RobofestCube\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_flash.c" lastModified="15f4632a680"/>
+      </target>
+      <target file="stm32f7xx_hal_cortex.o" lastModified="16193db2c8d">
+         <source file="..\..\..\RobofestCube\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_cortex.c" lastModified="15f4632a5cc"/>
+      </target>
+      <target file="stm32f7xx_hal_dma_ex.o" lastModified="16193daf467">
+         <source file="..\..\..\RobofestCube\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_dma_ex.c" lastModified="15f4632a661"/>
+      </target>
+      <target file="stm32f7xx_hal_tim.o" lastModified="16193db0bda">
+         <source file="..\..\..\RobofestCube\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_tim.c" lastModified="15f4632a895"/>
+      </target>
+      <target file="stm32f7xx_hal_dma.o" lastModified="16193db4d9a">
+         <source file="..\..\..\RobofestCube\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_dma.c" lastModified="15f4632a64a"/>
+      </target>
+      <target file="stm32f7xx_hal_flash_ex.o" lastModified="16193daeff8">
+         <source file="..\..\..\RobofestCube\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_flash_ex.c" lastModified="15f4632a68a"/>
+      </target>
+      <target file="stm32f7xx_hal_gpio.o" lastModified="16193db3a19">
+         <source file="..\..\..\RobofestCube\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_gpio.c" lastModified="15f4632a693"/>
+      </target>
+      <target file="stm32f7xx_hal_tim_ex.o" lastModified="16193db48be">
+         <source file="..\..\..\RobofestCube\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_tim_ex.c" lastModified="15f4632a8bb"/>
+      </target>
+      <target file="stm32f7xx_hal_rcc.o" lastModified="16193db3573">
+         <source file="..\..\..\RobofestCube\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_rcc.c" lastModified="15f4632a7b7"/>
+      </target>
+      <target file="stm32f7xx_hal_rcc_ex.o" lastModified="16193db2336">
+         <source file="..\..\..\RobofestCube\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_rcc_ex.c" lastModified="15f4632a7c2"/>
+      </target>
+      <target file="stm32f7xx_hal_pwr.o" lastModified="16193db27fe">
+         <source file="..\..\..\RobofestCube\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_pwr.c" lastModified="15f4632a79a"/>
+      </target>
+      <target file="startup_stm32f10x_hd.o" lastModified="16193db064a">
+         <source file="..\..\..\startup_stm32f10x_hd.c" lastModified="15f75b02edd"/>
+      </target>
+      <target file="stm32f7xx_hal_pwr_ex.o" lastModified="16193db4356">
+         <source file="..\..\..\RobofestCube\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_pwr_ex.c" lastModified="15f4632a7a3"/>
+      </target>
+      <target file="stm32f7xx_hal_i2c.o" lastModified="16193daf9ca">
+         <source file="..\..\..\RobofestCube\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_i2c.c" lastModified="15f4632a6ce"/>
+      </target>
+      <target file="stm32f7xx_hal_i2c_ex.o" lastModified="16193db3e6a">
+         <source file="..\..\..\RobofestCube\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_i2c_ex.c" lastModified="15f4632a6d8"/>
+      </target>
+      <target file="main.o" lastModified="16193db195a">
+         <source file="..\..\..\RobofestCube\Src\main.c" lastModified="16193dadb01"/>
+      </target>
+   </processor>
+</history>
