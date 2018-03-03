@@ -84,6 +84,7 @@ unsigned char DCH1; // DCH1 from sbus
 unsigned char DCH2; // DCH2from sbus
 unsigned char Frame_lost; // Frame lost from sbus
 unsigned char failsafe; // failsafe from sbus
+unsigned char tank_switch; // Flag set switching motion mod is ready
 
 int16_t Left_Power = 0;
 int16_t Right_Power = 0; 
@@ -174,10 +175,24 @@ int main(void)
       Calibration_Channels(&CH[2], 172, 1808);
       Calibration_Channels(&CH[3], 128, 1792);
 
-      // Here move settings
-      Left_Power = (int16_t)((CH[1] + CH[0] - 2048)*(CH[2]/1024.0));
-      Right_Power = (int16_t)((CH[1] - CH[0])*(CH[2]/1024.0));
+      // Set tank_switch
+      if (CH[2] == 1026)
+      	tank_switch = 1;
 
+      // Here move settings
+      if ((CH[4] > 1024) && tank_switch)
+      {
+      	Left_Power = (int16_t) ((CH[2] - 1024)*2);
+      	Right_Power = (int16_t) ((CH[1] - 1024)*2);
+      }
+      else
+      {
+      	tank_switch = 0;
+      	Left_Power = (int16_t)((CH[1] + CH[0] - 2048)*(CH[2]/1024.0));
+      	Right_Power = (int16_t)((CH[1] - CH[0])*(CH[2]/1024.0));
+      }
+      	
+      // Normalization
       Left_Power = Min_Max(Left_Power, -2048, 2048);
       Right_Power = Min_Max(Right_Power, -2048, 2048);
       
