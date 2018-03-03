@@ -47,6 +47,7 @@
 
 TIM_HandleTypeDef htim2;
 TIM_HandleTypeDef htim3;
+TIM_HandleTypeDef htim4;
 
 UART_HandleTypeDef huart2;
 UART_HandleTypeDef huart3;
@@ -63,6 +64,7 @@ static void MX_USART2_UART_Init(void);
 static void MX_USART3_UART_Init(void);
 static void MX_TIM3_Init(void);
 static void MX_TIM2_Init(void);
+static void MX_TIM4_Init(void);
                                     
 void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
                                 
@@ -73,6 +75,7 @@ static unsigned int Parser (unsigned char a, unsigned char mask, unsigned char s
 static int16_t Min_Max(int16_t variable, int16_t min, int16_t max); // Break off the ends
 static void Engine_PWM_Set (int16_t Left_Power, int16_t Right_Power); // Set PWM setting on engines
 static void Calibration_Channels(uint16_t * CH, double min_val, double max_val); // Aligns the sights on channels
+static int16_t Switch_Range (int16_t prev_min_val, int16_t prev_max_val, int16_t min_val, int16_t max_val, int16_t value);
 /* USER CODE END PFP */
 
 /* USER CODE BEGIN 0 */
@@ -87,7 +90,8 @@ unsigned char failsafe; // failsafe from sbus
 unsigned char tank_switch; // Flag set switching motion mod is ready
 
 int16_t Left_Power = 0;
-int16_t Right_Power = 0; 
+int16_t Right_Power = 0;
+int16_t PWM_signal;
 
 unsigned int i; // Counter
 /* USER CODE END 0 */
@@ -121,6 +125,7 @@ int main(void)
   MX_USART3_UART_Init();
   MX_TIM3_Init();
   MX_TIM2_Init();
+  MX_TIM4_Init();
 
   /* USER CODE BEGIN 2 */
   __HAL_UART_ENABLE_IT(&huart2, UART_IT_RXNE);
@@ -130,6 +135,9 @@ int main(void)
   HAL_TIM_Base_Start_IT(&htim2);
   HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
   HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
+
+  HAL_TIM_Base_Start_IT(&htim4);
+  HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -137,7 +145,7 @@ int main(void)
   while (1)
   {
   /* USER CODE END WHILE */
-  	/* ТРУШШШШШШШШШШШШ НИКОЛАЙ    ЛАВ МАША!!!!!!!!! */
+
   /* USER CODE BEGIN 3 */
   	//HAL_UART_Transmit(&huart2, (unsigned char *) "After While\r", 12, 0xff);
 
@@ -145,18 +153,18 @@ int main(void)
     if (Radio_flag == 1)
     {
 
-      CH[0] = Radio_Data[1] + Parser(Radio_Data[2], 0b00000111, 8);
-      CH[1] = Parser(Radio_Data[2], 0b11111000, -3) + Parser(Radio_Data[3], 0b00111111, 5);
-      CH[2] = Parser(Radio_Data[3], 0b11000000, -6) + Parser(Radio_Data[4], 0b11111111, 2) + Parser(Radio_Data[5], 0b00000001, 10);
-      CH[3] = Parser(Radio_Data[5], 0b11111110, -1) + Parser(Radio_Data[6], 0b00001111, 7);
-      CH[4] = Parser(Radio_Data[6], 0b11110000, -4) + Parser(Radio_Data[7], 0b01111111, 4);
-      CH[5] = Parser(Radio_Data[7], 0b10000000, -7) + Parser(Radio_Data[8], 0b11111111, 1) + Parser(Radio_Data[9], 0b00000011, 9);
-      CH[6] = Parser(Radio_Data[9], 0b11111100, -2) + Parser(Radio_Data[10], 0b00011111, 6);
-      CH[7] = Parser(Radio_Data[10], 0b11100000, -5) + Parser(Radio_Data[11], 0b11111111, 3);
-      CH[8] = Radio_Data[12] + Parser(Radio_Data[13], 0b00000111, 8);
-      CH[9] = Parser(Radio_Data[13], 0b11111000, -3) + Parser(Radio_Data[14], 0b00111111, 5);
-      CH[10] = Parser(Radio_Data[14], 0b11000000, -6) + Parser(Radio_Data[15], 0b11111111, 2) + Parser(Radio_Data[16], 0b00000001, 10);
-      CH[11] = Parser(Radio_Data[16], 0b11111110, -1) + Parser(Radio_Data[17], 0b00001111, 7);
+      CH[0] = Radio_Data[1] + Parser(Radio_Data[2], 0b00000111, 8); // Right Left-Right
+      CH[1] = Parser(Radio_Data[2], 0b11111000, -3) + Parser(Radio_Data[3], 0b00111111, 5); // Right Up-Down
+      CH[2] = Parser(Radio_Data[3], 0b11000000, -6) + Parser(Radio_Data[4], 0b11111111, 2) + Parser(Radio_Data[5], 0b00000001, 10); // Left Up-Down
+      CH[3] = Parser(Radio_Data[5], 0b11111110, -1) + Parser(Radio_Data[6], 0b00001111, 7); // Left Left-Right
+      CH[4] = Parser(Radio_Data[6], 0b11110000, -4) + Parser(Radio_Data[7], 0b01111111, 4); // Far Left Swith
+      CH[5] = Parser(Radio_Data[7], 0b10000000, -7) + Parser(Radio_Data[8], 0b11111111, 1) + Parser(Radio_Data[9], 0b00000011, 9); // Close Left-Left switch
+      CH[6] = Parser(Radio_Data[9], 0b11111100, -2) + Parser(Radio_Data[10], 0b00011111, 6); // Close Left-Right switch
+      CH[7] = Parser(Radio_Data[10], 0b11100000, -5) + Parser(Radio_Data[11], 0b11111111, 3); // Close Right-Left switch
+      CH[8] = Radio_Data[12] + Parser(Radio_Data[13], 0b00000111, 8); // Close Right-Right switch
+      CH[9] = Parser(Radio_Data[13], 0b11111000, -3) + Parser(Radio_Data[14], 0b00111111, 5); // Far Right Swith
+      CH[10] = Parser(Radio_Data[14], 0b11000000, -6) + Parser(Radio_Data[15], 0b11111111, 2) + Parser(Radio_Data[16], 0b00000001, 10); // Left wheel
+      CH[11] = Parser(Radio_Data[16], 0b11111110, -1) + Parser(Radio_Data[17], 0b00001111, 7); // Right wheel
       CH[12] = Parser(Radio_Data[17], 0b11110000, -4) + Parser(Radio_Data[18], 0b01111111, 4);
       CH[13] = Parser(Radio_Data[18], 0b10000000, -7) + Parser(Radio_Data[19], 0b11111111, 1) + Parser(Radio_Data[20], 0b00000011, 9);
       CH[14] = Parser(Radio_Data[20], 0b11111100, -2) + Parser(Radio_Data[21], 0b00011111, 6);
@@ -175,35 +183,49 @@ int main(void)
       Calibration_Channels(&CH[2], 172, 1808);
       Calibration_Channels(&CH[3], 128, 1792);
 
-      // Set tank_switch
-      if (CH[2] == 1026)
-      	tank_switch = 1;
+      if (CH[5] < 1024) // Wheels mod
+      {
+      	// Stop manipulator
+      	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, Switch_Range(0, 2048, 544, 2400, 0));
 
-      // Here move settings
-      if ((CH[4] > 1024) && tank_switch)
-      {
-      	Left_Power = (int16_t) ((CH[2] - 1024)*2);
-      	Right_Power = (int16_t) ((CH[1] - 1024)*2);
-      }
-      else
-      {
-      	tank_switch = 0;
-      	Left_Power = (int16_t)((CH[1] + CH[0] - 2048)*(CH[2]/1024.0));
-      	Right_Power = (int16_t)((CH[1] - CH[0])*(CH[2]/1024.0));
-      }
+      	// Set tank_switch
+      	if (CH[2] == 1026)
+      		tank_switch = 1;
+		
+      	// Here move settings
+      	if ((CH[4] > 1024) && tank_switch)
+      	{
+      		Left_Power = (int16_t) ((CH[2] - 1024)*2);
+      		Right_Power = (int16_t) ((CH[1] - 1024)*2);
+      	}
+      	else
+      	{
+      		tank_switch = 0;
+      		Left_Power = (int16_t)((CH[1] + CH[0] - 2048)*(CH[2]/1024.0));
+      		Right_Power = (int16_t)((CH[1] - CH[0])*(CH[2]/1024.0));
+      	}
+      		
+      	// Normalization
+      	Left_Power = Min_Max(Left_Power, -2048, 2048);
+      	Right_Power = Min_Max(Right_Power, -2048, 2048);
       	
-      // Normalization
-      Left_Power = Min_Max(Left_Power, -2048, 2048);
-      Right_Power = Min_Max(Right_Power, -2048, 2048);
-      
-
-      if (Frame_lost) // If the packege has been lost, we all turn off
-      {
-        __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, 0);
-        __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_2, 0);
+      	if (Frame_lost) // If the packege has been lost, we all turn off
+      	{
+      	  __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, 0);
+      	  __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_2, 0);
+      	}
+      	else // Else set PWM setting on engines
+      		Engine_PWM_Set(Left_Power, Right_Power);
       }
-      else // Else set PWM setting on engines
-      	Engine_PWM_Set(Left_Power, Right_Power);
+      else // Manipulator mod
+      {
+      	// Stop motion
+      	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, 0);
+      	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_2, 0);
+
+      	PWM_signal = Switch_Range(0, 2048, 544, 2400, CH[2]);
+      	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, PWM_signal);
+      }
 
       Radio_flag = 0; //Receiving access
     }
@@ -363,6 +385,44 @@ static void MX_TIM3_Init(void)
 
 }
 
+/* TIM4 init function */
+static void MX_TIM4_Init(void)
+{
+
+  TIM_MasterConfigTypeDef sMasterConfig;
+  TIM_OC_InitTypeDef sConfigOC;
+
+  htim4.Instance = TIM4;
+  htim4.Init.Prescaler = 16-1;
+  htim4.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim4.Init.Period = 20000;
+  htim4.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim4.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_PWM_Init(&htim4) != HAL_OK)
+  {
+    _Error_Handler(__FILE__, __LINE__);
+  }
+
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim4, &sMasterConfig) != HAL_OK)
+  {
+    _Error_Handler(__FILE__, __LINE__);
+  }
+
+  sConfigOC.OCMode = TIM_OCMODE_PWM1;
+  sConfigOC.Pulse = 0;
+  sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
+  sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
+  if (HAL_TIM_PWM_ConfigChannel(&htim4, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
+  {
+    _Error_Handler(__FILE__, __LINE__);
+  }
+
+  HAL_TIM_MspPostInit(&htim4);
+
+}
+
 /* USART2 init function */
 static void MX_USART2_UART_Init(void)
 {
@@ -499,10 +559,15 @@ void Engine_PWM_Set (int16_t Left_Power, int16_t Right_Power)
     }
 }
 
-static void Calibration_Channels(uint16_t * CH, double min_val, double max_val)
+void Calibration_Channels(uint16_t * CH, double min_val, double max_val)
 {
 	*CH = (uint16_t) (2048.0*(*CH - min_val)/((double)(max_val - min_val)));
 	*CH = (uint16_t) (Min_Max((int16_t)*CH, 0, 2048));
+}
+
+int16_t Switch_Range (int16_t prev_min_val, int16_t prev_max_val, int16_t min_val, int16_t max_val, int16_t value)
+{
+	return (int16_t) ((value - prev_min_val)*((max_val - min_val)/((double)(prev_max_val - prev_min_val))) + min_val);
 }
 /* USER CODE END 4 */
 
