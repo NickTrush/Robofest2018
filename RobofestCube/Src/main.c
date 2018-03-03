@@ -69,13 +69,10 @@ void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
 
 /* USER CODE BEGIN PFP */
 /* Private function prototypes -----------------------------------------------*/
-unsigned int Parser (unsigned char a, unsigned char mask, unsigned char shift)
-{
-  if (shift > 0)
-    return (((unsigned int) (a&mask)) << shift);
-  else
-    return (((unsigned int) (a&mask)) >> (-1 * shift));
-}
+static unsigned int Parser (unsigned char a, unsigned char mask, unsigned char shift); // It's function for a short record of complex shifts
+static int16_t Min_Max(int16_t variable, int16_t min, int16_t max); // Break off the ends
+static void Engine_PWM_Set (int16_t Left_Power, int16_t Right_Power); // Set PWM setting on engines
+static void Calibration_Channels(uint16_t * CH, double min_val, double max_val); // Aligns the sights on channels
 /* USER CODE END PFP */
 
 /* USER CODE BEGIN 0 */
@@ -88,8 +85,8 @@ unsigned char DCH2; // DCH2from sbus
 unsigned char Frame_lost; // Frame lost from sbus
 unsigned char failsafe; // failsafe from sbus
 
-int32_t Left_Power = 0;
-int32_t Right_Power = 0; 
+int16_t Left_Power = 0;
+int16_t Right_Power = 0; 
 
 unsigned int i; // Counter
 /* USER CODE END 0 */
@@ -139,19 +136,13 @@ int main(void)
   while (1)
   {
   /* USER CODE END WHILE */
-
+  	/* ТРУШШШШШШШШШШШШ НИКОЛАЙ    ЛАВ МАША!!!!!!!!! */
   /* USER CODE BEGIN 3 */
   	//HAL_UART_Transmit(&huart2, (unsigned char *) "After While\r", 12, 0xff);
 
 //  	HAL_UART_Transmit(&huart3, (unsigned char *) "While\r", 6, 0xff);
     if (Radio_flag == 1)
     {
-     // HAL_UART_Transmit(&huart3, (unsigned char *) "C", 1, 0xff);
-    //  HAL_UART_Transmit(&huart3, (unsigned char *) "Radik has the longest big black dig!\r", 37, 0xff);
-      // unsigned int Parser (unsigned char a, unsigned char mask, unsigned char shift)
-      //HAL_UART_Transmit(&huart3, (unsigned char *) "Start_byte = ", 13, 0xff);
-  //    HAL_UART_Transmit(&huart3, (unsigned char *) &Radio_Data[0], 1, 0xff);
-  //    HAL_UART_Transmit(&huart3, (unsigned char *) "\r", 1, 0xff);
 
       CH[0] = Radio_Data[1] + Parser(Radio_Data[2], 0b00000111, 8);
       CH[1] = Parser(Radio_Data[2], 0b11111000, -3) + Parser(Radio_Data[3], 0b00111111, 5);
@@ -169,60 +160,36 @@ int main(void)
       CH[13] = Parser(Radio_Data[18], 0b10000000, -7) + Parser(Radio_Data[19], 0b11111111, 1) + Parser(Radio_Data[20], 0b00000011, 9);
       CH[14] = Parser(Radio_Data[20], 0b11111100, -2) + Parser(Radio_Data[21], 0b00011111, 6);
       CH[15] = Parser(Radio_Data[21], 0b11100000, -5) + Parser(Radio_Data[22], 0b11111111, 3);
+      // Channels accepted
 
       DCH1 = Parser(Radio_Data[23], 0b00000001, 0);
       DCH2 = Parser(Radio_Data[23], 0b00000010, -1);
       Frame_lost = Parser(Radio_Data[23], 0b00000100, -2);
       failsafe = Parser(Radio_Data[23], 0b00001000, -3);
+      // Specail signals accepted
+
+      // Calibration
+      Calibration_Channels(&CH[0], 172, 1811);
+      Calibration_Channels(&CH[1], 160, 1792);
+      Calibration_Channels(&CH[2], 172, 1808);
+      Calibration_Channels(&CH[3], 128, 1792);
 
       // Here move settings
-      Left_Power = (int32_t)((CH[1] + CH[0] - 2048)*(CH[2]/2048.0));
-      Right_Power = (int32_t)((CH[1] - CH[0])*(CH[2]/2048.0));
+      Left_Power = (int16_t)((CH[1] + CH[0] - 2048)*(CH[2]/1024.0));
+      Right_Power = (int16_t)((CH[1] - CH[0])*(CH[2]/1024.0));
+
+      Left_Power = Min_Max(Left_Power, -2048, 2048);
+      Right_Power = Min_Max(Right_Power, -2048, 2048);
+      
+
       if (Frame_lost) // If the packege has been lost, we all turn off
       {
         __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, 0);
         __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_2, 0);
       }
-      else
-      {
-        if (Left_Power > 0) // Then the direct polarity
-        {
-          HAL_GPIO_WritePin(GPIOC, GPIO_PIN_0, GPIO_PIN_SET);
-          HAL_GPIO_WritePin(GPIOC, GPIO_PIN_3, GPIO_PIN_RESET);
+      else // Else set PWM setting on engines
+      	Engine_PWM_Set(Left_Power, Right_Power);
 
-          // PWM settings
-          __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, Left_Power);
-        }
-
-        if (Left_Power < 0) // Then the invert polarity
-        {
-          HAL_GPIO_WritePin(GPIOC, GPIO_PIN_0, GPIO_PIN_RESET);
-          HAL_GPIO_WritePin(GPIOC, GPIO_PIN_3, GPIO_PIN_SET);
-
-          // PWM settings
-          __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, -1*Left_Power);
-        }
-
-        if (Right_Power > 0) // Then the direct polarity
-        {
-          HAL_GPIO_WritePin(GPIOF, GPIO_PIN_3, GPIO_PIN_SET);
-          HAL_GPIO_WritePin(GPIOF, GPIO_PIN_5, GPIO_PIN_RESET);
-
-          // PWM settings
-          __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_2, Right_Power);
-        }
-
-        if (Right_Power < 0) // Then the invert polarity
-        {
-          HAL_GPIO_WritePin(GPIOF, GPIO_PIN_3, GPIO_PIN_RESET);
-          HAL_GPIO_WritePin(GPIOF, GPIO_PIN_5, GPIO_PIN_SET);
-
-          // PWM settings
-          __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_2, -1*Right_Power);
-        }
-      }
-
-     // HAL_UART_Transmit(&huart3, (unsigned char *) "\r\r\r", 3, 0xff);
       Radio_flag = 0; //Receiving access
     }
 
@@ -302,7 +269,7 @@ static void MX_TIM2_Init(void)
   TIM_OC_InitTypeDef sConfigOC;
 
   htim2.Instance = TIM2;
-  htim2.Init.Prescaler = 800-1;
+  htim2.Init.Prescaler = 80-1;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim2.Init.Period = 2048;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
@@ -466,7 +433,62 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+unsigned int Parser (unsigned char a, unsigned char mask, unsigned char shift)
+{
+  if (shift > 0)
+    return (((unsigned int) (a&mask)) << shift);
+  else
+  	return (((unsigned int) (a&mask)) >> (-1 * shift));
+}
 
+int16_t Min_Max(int16_t variable, int16_t min, int16_t max)
+{
+	if (variable < min)
+		return min;
+	if (variable > max)
+		return max;
+	return variable;
+}
+
+void Engine_PWM_Set (int16_t Left_Power, int16_t Right_Power)
+{
+	/// LEFT
+    if (Left_Power > 0) // Then the direct polarity
+    {
+      HAL_GPIO_WritePin(GPIOC, GPIO_PIN_0, GPIO_PIN_SET);
+      HAL_GPIO_WritePin(GPIOC, GPIO_PIN_3, GPIO_PIN_RESET);
+      // PWM settings
+      __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, Left_Power);
+    }
+    if (Left_Power < 0) // Then the invert polarity
+    {
+      HAL_GPIO_WritePin(GPIOC, GPIO_PIN_0, GPIO_PIN_RESET);
+      HAL_GPIO_WritePin(GPIOC, GPIO_PIN_3, GPIO_PIN_SET);
+      // PWM settings
+      __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, -1*Left_Power);
+    }
+    /// RIGHT
+    if (Right_Power > 0) // Then the direct polarity
+    {
+      HAL_GPIO_WritePin(GPIOF, GPIO_PIN_3, GPIO_PIN_SET);
+      HAL_GPIO_WritePin(GPIOF, GPIO_PIN_5, GPIO_PIN_RESET);
+      // PWM settings
+      __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_2, Right_Power);
+    }
+    if (Right_Power < 0) // Then the invert polarity
+    {
+      HAL_GPIO_WritePin(GPIOF, GPIO_PIN_3, GPIO_PIN_RESET);
+      HAL_GPIO_WritePin(GPIOF, GPIO_PIN_5, GPIO_PIN_SET);
+      // PWM settings
+      __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_2, -1*Right_Power);
+    }
+}
+
+static void Calibration_Channels(uint16_t * CH, double min_val, double max_val)
+{
+	*CH = (uint16_t) (2048.0*(*CH - min_val)/((double)(max_val - min_val)));
+	*CH = (uint16_t) (Min_Max((int16_t)*CH, 0, 2048));
+}
 /* USER CODE END 4 */
 
 /**
