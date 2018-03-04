@@ -48,6 +48,7 @@
 TIM_HandleTypeDef htim2;
 TIM_HandleTypeDef htim3;
 TIM_HandleTypeDef htim4;
+TIM_HandleTypeDef htim9;
 
 UART_HandleTypeDef huart2;
 UART_HandleTypeDef huart3;
@@ -65,6 +66,7 @@ static void MX_USART3_UART_Init(void);
 static void MX_TIM3_Init(void);
 static void MX_TIM2_Init(void);
 static void MX_TIM4_Init(void);
+static void MX_TIM9_Init(void);
                                     
 void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
                                 
@@ -79,6 +81,10 @@ static int16_t Switch_Range (int16_t prev_min_val, int16_t prev_max_val, int16_t
 /* USER CODE END PFP */
 
 /* USER CODE BEGIN 0 */
+unsigned int i; // Counter
+int16_t iteration = 0; // Iterator for servo and camera capasity
+
+// Data receive variables
 unsigned char Radio_Data[250]; // Buffer for Radio module data
 uint16_t CH[16]; // Processed channels
 unsigned char Start_byte; // Byte only for start receiving
@@ -87,18 +93,19 @@ unsigned char DCH1; // DCH1 from sbus
 unsigned char DCH2; // DCH2from sbus
 unsigned char Frame_lost; // Frame lost from sbus
 unsigned char failsafe; // failsafe from sbus
-unsigned char tank_switch; // Flag set switching motion mod is ready
 
+// Motion variables
 int16_t Left_Power = 0;  // Power of the right side of the wheels
 int16_t Right_Power = 0; // Power of the left side of the wheels
-int16_t PWM_signal; // For debag
-
-unsigned int i; // Counter
+unsigned char tank_switch; // Flag set switching motion mod is ready
 
 // Servo variables
-int16_t iteration = 0;
 int16_t PWM_slope = 544;
 int16_t PWM_rotate = 544;
+
+// Camera variables
+int16_t PWM_LeftRight = 544;
+int16_t PWM_UpDown = 544;
 /* USER CODE END 0 */
 
 int main(void)
@@ -131,6 +138,7 @@ int main(void)
   MX_TIM3_Init();
   MX_TIM2_Init();
   MX_TIM4_Init();
+  MX_TIM9_Init();
 
   /* USER CODE BEGIN 2 */
   __HAL_UART_ENABLE_IT(&huart2, UART_IT_RXNE);
@@ -145,6 +153,10 @@ int main(void)
   HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1);
   HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_2);
   HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_3);
+
+  HAL_TIM_Base_Start_IT(&htim9);
+  HAL_TIM_PWM_Start(&htim9, TIM_CHANNEL_1);
+  HAL_TIM_PWM_Start(&htim9, TIM_CHANNEL_2);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -188,64 +200,106 @@ int main(void)
       for (i = 0; i < 16; i++)
       	Calibration_Channels(&CH[i], 172, 1811);
 
-      if (CH[5] < 1024) // Wheels mod
+      switch (CH[5])
       {
-      	// Stop manipulator
-      	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, 0);
-
-      	// Set tank_switch
-      	if (CH[2] == 1026)
-      		tank_switch = 1;
-		
-      	// Here move settings
-      	if ((CH[4] > 1024) && tank_switch)
+      	case 0: // Wheels mod
       	{
-      		Left_Power = (int16_t) ((CH[2] - 1024)*2);
-      		Right_Power = (int16_t) ((CH[1] - 1024)*2);
-      	}
-      	else
-      	{
-      		tank_switch = 0;
-      		Left_Power = (int16_t)((CH[1] + CH[0] - 2048)*(CH[2]/1024.0));
-      		Right_Power = (int16_t)((CH[1] - CH[0])*(CH[2]/1024.0));
-      	}
-      		
-      	// Normalization
-      	Left_Power = Min_Max(Left_Power, -2048, 2048);
-      	Right_Power = Min_Max(Right_Power, -2048, 2048);
-      	
-      	if (Frame_lost) // If the packege has been lost, we all turn off
-      	{
-      	  __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, 0);
-      	  __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_2, 0);
-      	}
-      	else // Else set PWM setting on engines
-      		Engine_PWM_Set(Left_Power, Right_Power);
-      }
-      else // Manipulator mod
-      {
-      	// Stop motion
-      	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, 0);
-      	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_2, 0);
-
-      	if (Frame_lost) // If the packege has been lost, we all turn off
+      		// Stop manipulator
       		__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, 0);
-      	else
+      		__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_2, 0);
+      		__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_3, 0);
+
+      		// Stop Camera
+      		__HAL_TIM_SET_COMPARE(&htim9, TIM_CHANNEL_1, 0);
+      		__HAL_TIM_SET_COMPARE(&htim9, TIM_CHANNEL_2, 0);
+	
+      		// Set tank_switch
+      		if (CH[2] == 1026)
+      			tank_switch = 1;
+			
+      		// Here move settings
+      		if ((CH[4] > 1024) && tank_switch)
+      		{
+      			Left_Power = (int16_t) ((CH[2] - 1024)*2);
+      			Right_Power = (int16_t) ((CH[1] - 1024)*2);
+      		}
+      		else
+      		{
+      			tank_switch = 0;
+      			Left_Power = (int16_t)((CH[1] + CH[0] - 2048)*(CH[2]/1024.0));
+      			Right_Power = (int16_t)((CH[1] - CH[0])*(CH[2]/1024.0));
+      		}
+      			
+      		// Normalization
+      		Left_Power = Min_Max(Left_Power, -2048, 2048);
+      		Right_Power = Min_Max(Right_Power, -2048, 2048);
+      		
+      		if (Frame_lost) // If the packege has been lost, we all turn off
+      		{
+      		  __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, 0);
+      		  __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_2, 0);
+      		}
+      		else // Else set PWM setting on engines
+      			Engine_PWM_Set(Left_Power, Right_Power);
+
+      		break;
+      	}
+      	
+      	case 1024:
       	{
-      		// Capture the goal
-      		__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, Switch_Range(0, 2048, 600, 2300, CH[2]));
+      		// Stop motion
+      		__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, 0);
+      		__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_2, 0);
 
-      		// Slope
+      		// Stop manipulator
+      		__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, 0);
+      		__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_2, 0);
+      		__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_3, 0);
+
+      		// Left-Right
       		iteration = Switch_Range(0, 2048, -180, 180, CH[0]);
-      		PWM_slope += iteration;
-      		PWM_slope = Min_Max(PWM_slope, 600, 2300);  // PWM_slope = Min_Max(PWM_slope, 544, 2400);
-			__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_2, PWM_slope);
+      		PWM_LeftRight += iteration;
+      		PWM_LeftRight = Min_Max(PWM_LeftRight, 600, 2300);  // PWM_slope = Min_Max(PWM_slope, 544, 2400);
+			__HAL_TIM_SET_COMPARE(&htim9, TIM_CHANNEL_1, PWM_LeftRight);
 
-			// Rotate the claw
-			iteration = Switch_Range(0, 2048, -180, 180, CH[3]);
-			PWM_rotate += iteration;
-			PWM_rotate = Min_Max(PWM_rotate, 600, 2300);
-			__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_3, PWM_rotate);
+			// Up-Down
+			iteration = Switch_Range(0, 2048, -180, 180, CH[1]);
+			PWM_UpDown += iteration;
+			PWM_UpDown = Min_Max(PWM_UpDown, 600, 2300);
+			__HAL_TIM_SET_COMPARE(&htim9, TIM_CHANNEL_2, PWM_UpDown);
+			break;
+      	}
+
+      	case 2048:
+      	{
+      		// Stop motion
+      		__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, 0);
+      		__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_2, 0);
+
+      		// Stop Camera
+      		__HAL_TIM_SET_COMPARE(&htim9, TIM_CHANNEL_1, 0);
+      		__HAL_TIM_SET_COMPARE(&htim9, TIM_CHANNEL_2, 0);
+	
+      		if (Frame_lost) // If the packege has been lost, we all turn off
+      			__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, 0);
+      		else
+      		{
+      			// Capture the goal
+      			__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, Switch_Range(0, 2048, 600, 2300, CH[2]));
+	
+      			// Slope
+      			iteration = Switch_Range(0, 2048, -180, 180, CH[0]);
+      			PWM_slope += iteration;
+      			PWM_slope = Min_Max(PWM_slope, 600, 2300);  // PWM_slope = Min_Max(PWM_slope, 544, 2400);
+				__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_2, PWM_slope);
+	
+				// Rotate the claw
+				iteration = Switch_Range(0, 2048, -180, 180, CH[3]);
+				PWM_rotate += iteration;
+				PWM_rotate = Min_Max(PWM_rotate, 600, 2300);
+				__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_3, PWM_rotate);
+				break;
+      		}
       	}
       }
 
@@ -451,7 +505,47 @@ static void MX_TIM4_Init(void)
     _Error_Handler(__FILE__, __LINE__);
   }
 
+  if (HAL_TIM_PWM_ConfigChannel(&htim4, &sConfigOC, TIM_CHANNEL_4) != HAL_OK)
+  {
+    _Error_Handler(__FILE__, __LINE__);
+  }
+
   HAL_TIM_MspPostInit(&htim4);
+
+}
+
+/* TIM9 init function */
+static void MX_TIM9_Init(void)
+{
+
+  TIM_OC_InitTypeDef sConfigOC;
+
+  htim9.Instance = TIM9;
+  htim9.Init.Prescaler = 16-1;
+  htim9.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim9.Init.Period = 20000;
+  htim9.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim9.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_PWM_Init(&htim9) != HAL_OK)
+  {
+    _Error_Handler(__FILE__, __LINE__);
+  }
+
+  sConfigOC.OCMode = TIM_OCMODE_PWM1;
+  sConfigOC.Pulse = 0;
+  sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
+  sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
+  if (HAL_TIM_PWM_ConfigChannel(&htim9, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
+  {
+    _Error_Handler(__FILE__, __LINE__);
+  }
+
+  if (HAL_TIM_PWM_ConfigChannel(&htim9, &sConfigOC, TIM_CHANNEL_2) != HAL_OK)
+  {
+    _Error_Handler(__FILE__, __LINE__);
+  }
+
+  HAL_TIM_MspPostInit(&htim9);
 
 }
 
@@ -511,6 +605,7 @@ static void MX_GPIO_Init(void)
   GPIO_InitTypeDef GPIO_InitStruct;
 
   /* GPIO Ports Clock Enable */
+  __HAL_RCC_GPIOE_CLK_ENABLE();
   __HAL_RCC_GPIOF_CLK_ENABLE();
   __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
