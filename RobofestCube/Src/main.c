@@ -71,7 +71,7 @@ void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
 
 /* USER CODE BEGIN PFP */
 /* Private function prototypes -----------------------------------------------*/
-static unsigned int Parser (unsigned char a, unsigned char mask, unsigned char shift); // It's function for a short record of complex shifts
+static unsigned int Parser (unsigned char a, unsigned char mask, int shift); // It's function for a short record of complex shifts
 static int16_t Min_Max(int16_t variable, int16_t min, int16_t max); // Break off the ends
 static void Engine_PWM_Set (int16_t Left_Power, int16_t Right_Power); // Set PWM setting on engines
 static void Calibration_Channels(uint16_t * CH, double min_val, double max_val); // Aligns the sights on channels
@@ -89,11 +89,16 @@ unsigned char Frame_lost; // Frame lost from sbus
 unsigned char failsafe; // failsafe from sbus
 unsigned char tank_switch; // Flag set switching motion mod is ready
 
-int16_t Left_Power = 0;
-int16_t Right_Power = 0;
-int16_t PWM_signal;
+int16_t Left_Power = 0;  // Power of the right side of the wheels
+int16_t Right_Power = 0; // Power of the left side of the wheels
+int16_t PWM_signal; // For debag
 
 unsigned int i; // Counter
+
+// Servo variables
+int16_t iteration = 0;
+int16_t PWM_slope = 544;
+int16_t PWM_rotate = 544;
 /* USER CODE END 0 */
 
 int main(void)
@@ -138,6 +143,8 @@ int main(void)
 
   HAL_TIM_Base_Start_IT(&htim4);
   HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1);
+  HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_2);
+  HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_3);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -178,15 +185,13 @@ int main(void)
       // Specail signals accepted
 
       // Calibration
-      Calibration_Channels(&CH[0], 172, 1811);
-      Calibration_Channels(&CH[1], 160, 1792);
-      Calibration_Channels(&CH[2], 172, 1808);
-      Calibration_Channels(&CH[3], 128, 1792);
+      for (i = 0; i < 16; i++)
+      	Calibration_Channels(&CH[i], 172, 1811);
 
       if (CH[5] < 1024) // Wheels mod
       {
       	// Stop manipulator
-      	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, Switch_Range(0, 2048, 544, 2400, 0));
+      	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, 0);
 
       	// Set tank_switch
       	if (CH[2] == 1026)
@@ -223,8 +228,25 @@ int main(void)
       	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, 0);
       	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_2, 0);
 
-      	PWM_signal = Switch_Range(0, 2048, 544, 2400, CH[2]);
-      	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, PWM_signal);
+      	if (Frame_lost) // If the packege has been lost, we all turn off
+      		__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, 0);
+      	else
+      	{
+      		// Capture the goal
+      		__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, Switch_Range(0, 2048, 600, 2300, CH[2]));
+
+      		// Slope
+      		iteration = Switch_Range(0, 2048, -180, 180, CH[0]);
+      		PWM_slope += iteration;
+      		PWM_slope = Min_Max(PWM_slope, 600, 2300);  // PWM_slope = Min_Max(PWM_slope, 544, 2400);
+			__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_2, PWM_slope);
+
+			// Rotate the claw
+			iteration = Switch_Range(0, 2048, -180, 180, CH[3]);
+			PWM_rotate += iteration;
+			PWM_rotate = Min_Max(PWM_rotate, 600, 2300);
+			__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_3, PWM_rotate);
+      	}
       }
 
       Radio_flag = 0; //Receiving access
@@ -419,6 +441,16 @@ static void MX_TIM4_Init(void)
     _Error_Handler(__FILE__, __LINE__);
   }
 
+  if (HAL_TIM_PWM_ConfigChannel(&htim4, &sConfigOC, TIM_CHANNEL_2) != HAL_OK)
+  {
+    _Error_Handler(__FILE__, __LINE__);
+  }
+
+  if (HAL_TIM_PWM_ConfigChannel(&htim4, &sConfigOC, TIM_CHANNEL_3) != HAL_OK)
+  {
+    _Error_Handler(__FILE__, __LINE__);
+  }
+
   HAL_TIM_MspPostInit(&htim4);
 
 }
@@ -508,7 +540,7 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-unsigned int Parser (unsigned char a, unsigned char mask, unsigned char shift)
+unsigned int Parser (unsigned char a, unsigned char mask, int shift)
 {
   if (shift > 0)
     return (((unsigned int) (a&mask)) << shift);
