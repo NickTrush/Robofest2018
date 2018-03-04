@@ -48,6 +48,7 @@
 TIM_HandleTypeDef htim2;
 TIM_HandleTypeDef htim3;
 TIM_HandleTypeDef htim4;
+TIM_HandleTypeDef htim6;
 TIM_HandleTypeDef htim9;
 
 UART_HandleTypeDef huart2;
@@ -63,12 +64,15 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_USART2_UART_Init(void);
 static void MX_USART3_UART_Init(void);
-static void MX_TIM3_Init(void);
 static void MX_TIM2_Init(void);
 static void MX_TIM4_Init(void);
 static void MX_TIM9_Init(void);
+static void MX_TIM6_Init(void);
+static void MX_TIM3_Init(void);
                                     
 void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
+                                
+                                
                                 
 
 /* USER CODE BEGIN PFP */
@@ -102,6 +106,7 @@ unsigned char tank_switch; // Flag set switching motion mod is ready
 // Servo variables
 int16_t PWM_slope = 544;
 int16_t PWM_rotate = 544;
+int16_t PWM_manipulator_rotate = 900;
 
 // Camera variables
 int16_t PWM_LeftRight = 544;
@@ -135,19 +140,23 @@ int main(void)
   MX_GPIO_Init();
   MX_USART2_UART_Init();
   MX_USART3_UART_Init();
-  MX_TIM3_Init();
   MX_TIM2_Init();
   MX_TIM4_Init();
   MX_TIM9_Init();
+  MX_TIM6_Init();
+  MX_TIM3_Init();
 
   /* USER CODE BEGIN 2 */
-  __HAL_UART_ENABLE_IT(&huart2, UART_IT_RXNE);
-  HAL_TIM_Base_Start_IT(&htim3);
-  
-  // PWM Activation
   HAL_TIM_Base_Start_IT(&htim2);
+  __HAL_UART_ENABLE_IT(&huart2, UART_IT_RXNE);
   HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
   HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
+  
+  // PWM Activation
+  HAL_TIM_Base_Start_IT(&htim3);
+  HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
+  HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_2);
+  HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_3);
 
   HAL_TIM_Base_Start_IT(&htim4);
   HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1);
@@ -267,6 +276,7 @@ int main(void)
 			PWM_UpDown += iteration;
 			PWM_UpDown = Min_Max(PWM_UpDown, 600, 2300);
 			__HAL_TIM_SET_COMPARE(&htim9, TIM_CHANNEL_2, PWM_UpDown);
+
 			break;
       	}
 
@@ -287,8 +297,8 @@ int main(void)
       			// Capture the goal
       			__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, Switch_Range(0, 2048, 600, 2300, CH[2]));
 	
-      			// Slope
-      			iteration = Switch_Range(0, 2048, -180, 180, CH[0]);
+      			// Pitch
+      			iteration = Switch_Range(0, 2048, -180, 180, CH[1]);
       			PWM_slope += iteration;
       			PWM_slope = Min_Max(PWM_slope, 600, 2300);  // PWM_slope = Min_Max(PWM_slope, 544, 2400);
 				__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_2, PWM_slope);
@@ -298,6 +308,19 @@ int main(void)
 				PWM_rotate += iteration;
 				PWM_rotate = Min_Max(PWM_rotate, 600, 2300);
 				__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_3, PWM_rotate);
+
+				// Direct_1
+				__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, Switch_Range(0, 2048, 900, 2100, CH[10]));
+
+				// Direct_1
+				__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_2, Switch_Range(0, 2048, 900, 2100, CH[11]));
+
+				// Rotate the manipulator
+				iteration = Switch_Range(0, 2048, -180, 180, CH[0]);
+      			PWM_manipulator_rotate += iteration;
+      			PWM_manipulator_rotate = Min_Max(PWM_manipulator_rotate, 900, 2100);  // PWM_slope = Min_Max(PWM_slope, 544, 2400);
+				__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, PWM_manipulator_rotate);
+
 				break;
       		}
       	}
@@ -432,22 +455,16 @@ static void MX_TIM2_Init(void)
 static void MX_TIM3_Init(void)
 {
 
-  TIM_ClockConfigTypeDef sClockSourceConfig;
   TIM_MasterConfigTypeDef sMasterConfig;
+  TIM_OC_InitTypeDef sConfigOC;
 
   htim3.Instance = TIM3;
-  htim3.Init.Prescaler = 15999;
+  htim3.Init.Prescaler = 16-1;
   htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim3.Init.Period = 12;
+  htim3.Init.Period = 5000;
   htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim3.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
-  if (HAL_TIM_Base_Init(&htim3) != HAL_OK)
-  {
-    _Error_Handler(__FILE__, __LINE__);
-  }
-
-  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
-  if (HAL_TIM_ConfigClockSource(&htim3, &sClockSourceConfig) != HAL_OK)
+  if (HAL_TIM_PWM_Init(&htim3) != HAL_OK)
   {
     _Error_Handler(__FILE__, __LINE__);
   }
@@ -458,6 +475,27 @@ static void MX_TIM3_Init(void)
   {
     _Error_Handler(__FILE__, __LINE__);
   }
+
+  sConfigOC.OCMode = TIM_OCMODE_PWM1;
+  sConfigOC.Pulse = 0;
+  sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
+  sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
+  if (HAL_TIM_PWM_ConfigChannel(&htim3, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
+  {
+    _Error_Handler(__FILE__, __LINE__);
+  }
+
+  if (HAL_TIM_PWM_ConfigChannel(&htim3, &sConfigOC, TIM_CHANNEL_2) != HAL_OK)
+  {
+    _Error_Handler(__FILE__, __LINE__);
+  }
+
+  if (HAL_TIM_PWM_ConfigChannel(&htim3, &sConfigOC, TIM_CHANNEL_3) != HAL_OK)
+  {
+    _Error_Handler(__FILE__, __LINE__);
+  }
+
+  HAL_TIM_MspPostInit(&htim3);
 
 }
 
@@ -511,6 +549,31 @@ static void MX_TIM4_Init(void)
   }
 
   HAL_TIM_MspPostInit(&htim4);
+
+}
+
+/* TIM6 init function */
+static void MX_TIM6_Init(void)
+{
+
+  TIM_MasterConfigTypeDef sMasterConfig;
+
+  htim6.Instance = TIM6;
+  htim6.Init.Prescaler = 16000-1;
+  htim6.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim6.Init.Period = 12;
+  htim6.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim6) != HAL_OK)
+  {
+    _Error_Handler(__FILE__, __LINE__);
+  }
+
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim6, &sMasterConfig) != HAL_OK)
+  {
+    _Error_Handler(__FILE__, __LINE__);
+  }
 
 }
 
@@ -609,8 +672,8 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOF_CLK_ENABLE();
   __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
-  __HAL_RCC_GPIOD_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
+  __HAL_RCC_GPIOD_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOF, GPIO_PIN_3|GPIO_PIN_5, GPIO_PIN_RESET);

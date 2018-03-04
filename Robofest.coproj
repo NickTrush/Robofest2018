@@ -99,11 +99,11 @@
     <File name="Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c_ex.c" path="RobofestCube/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c_ex.c" type="1"/>
     <File name="Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash.c" path="RobofestCube/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash.c" type="1"/>
     <File name="Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart.c" path="RobofestCube/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart.c" type="1"/>
-    <File name="Drivers/CMSIS/Include/core_cm4.h" path="RobofestCube/Drivers/CMSIS/Include/core_cm4.h" type="1"/>
     <File name="Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_gpio.c" path="RobofestCube/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_gpio.c" type="1"/>
+    <File name="Drivers/CMSIS/Include/core_cm4.h" path="RobofestCube/Drivers/CMSIS/Include/core_cm4.h" type="1"/>
     <File name="Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rcc_ex.h" path="RobofestCube/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rcc_ex.h" type="1"/>
-    <File name="Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc.c" path="RobofestCube/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc.c" type="1"/>
     <File name="Drivers/CMSIS/Include/cmsis_armcc_V6.h" path="RobofestCube/Drivers/CMSIS/Include/cmsis_armcc_V6.h" type="1"/>
+    <File name="Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc.c" path="RobofestCube/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc.c" type="1"/>
     <File name="Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim.c" path="RobofestCube/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim.c" type="1"/>
     <File name="Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc_ex.c" path="RobofestCube/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc_ex.c" type="1"/>
     <File name="Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f7xx.h" path="RobofestCube/Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f7xx.h" type="1"/>
@@ -118,8 +118,8 @@
     <File name="Drivers/CMSIS/Include/core_cm0plus.h" path="RobofestCube/Drivers/CMSIS/Include/core_cm0plus.h" type="1"/>
     <File name="Drivers/STM32F7xx_HAL_Driver/Src" path="" type="2"/>
     <File name="Drivers/CMSIS/Device" path="" type="2"/>
-    <File name="Drivers/CMSIS/Include/arm_math.h" path="RobofestCube/Drivers/CMSIS/Include/arm_math.h" type="1"/>
     <File name="Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_gpio.h" path="RobofestCube/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_gpio.h" type="1"/>
+    <File name="Drivers/CMSIS/Include/arm_math.h" path="RobofestCube/Drivers/CMSIS/Include/arm_math.h" type="1"/>
     <File name="Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_cortex.c" path="RobofestCube/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_cortex.c" type="1"/>
     <File name="Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h" path="RobofestCube/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h" type="1"/>
     <File name="Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_gpio_ex.h" path="RobofestCube/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_gpio_ex.h" type="1"/>
@@ -146,8 +146,8 @@
     <File name="Src/stm32f7xx_hal_msp.c" path="RobofestCube/Src/stm32f7xx_hal_msp.c" type="1"/>
     <File name="Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_def.h" path="RobofestCube/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_def.h" type="1"/>
     <File name="Drivers/CMSIS/Device/ST/STM32F7xx/Include/system_stm32f7xx.h" path="RobofestCube/Drivers/CMSIS/Device/ST/STM32F7xx/Include/system_stm32f7xx.h" type="1"/>
-    <File name="Drivers/CMSIS/Include/core_sc000.h" path="RobofestCube/Drivers/CMSIS/Include/core_sc000.h" type="1"/>
     <File name="Drivers/CMSIS/Include/core_sc300.h" path="RobofestCube/Drivers/CMSIS/Include/core_sc300.h" type="1"/>
+    <File name="Drivers/CMSIS/Include/core_sc000.h" path="RobofestCube/Drivers/CMSIS/Include/core_sc000.h" type="1"/>
     <File name="Drivers/CMSIS/Device/ST/STM32F7xx/Source/Templates" path="" type="2"/>
     <File name="Drivers/STM32F7xx_HAL_Driver" path="" type="2"/>
     <File name="Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr.h" path="RobofestCube/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr.h" type="1"/>
