@@ -23,11 +23,11 @@
 <input factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory">&#x0A;<org.coocox.welcome.ui.WelcomePage/>
 </input>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f7xx_hal_msp.c" partName="stm32f7xx_hal_msp.c" path="C:/Users/NickTrush/CoIDE/workspace/Robofest/RobofestCube/Src/stm32f7xx_hal_msp.c" title="stm32f7xx_hal_msp.c" tooltip="C:/Users/NickTrush/CoIDE/workspace/Robofest/RobofestCube/Src/stm32f7xx_hal_msp.c" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f7xx_hal_msp.c" partName="stm32f7xx_hal_msp.c" path="C:/Users/NickTrush/CoIDE/workspace/Robofest/RobofestCube/Src/stm32f7xx_hal_msp.c" title="stm32f7xx_hal_msp.c" tooltip="C:/Users/NickTrush/CoIDE/workspace/Robofest/RobofestCube/Src/stm32f7xx_hal_msp.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Robofest/Src/stm32f7xx_hal_msp.c"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f7xx_it.c" partName="stm32f7xx_it.c" path="C:/Users/NickTrush/CoIDE/workspace/Robofest/RobofestCube/Src/stm32f7xx_it.c" title="stm32f7xx_it.c" tooltip="C:/Users/NickTrush/CoIDE/workspace/Robofest/RobofestCube/Src/stm32f7xx_it.c" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f7xx_it.c" partName="stm32f7xx_it.c" path="C:/Users/NickTrush/CoIDE/workspace/Robofest/RobofestCube/Src/stm32f7xx_it.c" title="stm32f7xx_it.c" tooltip="C:/Users/NickTrush/CoIDE/workspace/Robofest/RobofestCube/Src/stm32f7xx_it.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Robofest/Src/stm32f7xx_it.c"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
 </editor>
@@ -37,13 +37,13 @@
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/Users/NickTrush/CoIDE/workspace/Robofest/RobofestCube/Src/main.c" title="main.c" tooltip="C:/Users/NickTrush/CoIDE/workspace/Robofest/RobofestCube/Src/main.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Robofest/Src/main.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="5244" selectionTopPixel="1904"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="5365" selectionTopPixel="1938"/>
 </editor>
 </editors>
 <views>
 <view id="org.eclipse.debug.ui.ExpressionView" partName="Expressions">
 <viewState>
-<ExpressionKeySet ExpKeys="&amp;CH[0],&amp;CH[1],&amp;CH[2],&amp;CH[3],&amp;CH[4],&amp;CH[5],&amp;CH[6],&amp;CH[7],&amp;CH[8],&amp;CH[9],&amp;CH[10],&amp;CH[11],&amp;CH[12],&amp;CH[13],&amp;CH[14],&amp;CH[15],&amp;Left_Power,&amp;Right_Power,&amp;PWM_slope,&amp;PWM_rotate,"/>
+<ExpressionKeySet ExpKeys="&amp;CH[0],&amp;CH[1],&amp;CH[2],&amp;CH[3],&amp;CH[4],&amp;CH[5],&amp;CH[6],&amp;CH[7],&amp;CH[8],&amp;CH[9],&amp;CH[10],&amp;CH[11],&amp;CH[12],&amp;CH[13],&amp;CH[14],&amp;CH[15],&amp;Left_Power,&amp;Right_Power,&amp;PWM_slope,&amp;PWM_rotate,&amp;PWM_LeftRight,&amp;PWM_UpDown,"/>
 </viewState>
 </view>
 <view id="org.coocox.smart.ui.view.ConfigureView" partName="Graphical Code Generation">
@@ -57,7 +57,7 @@
 <element path="/Robofest/Src"/>
 </expanded>
 <selection>
-<element path="/Robofest/Src/stm32f7xx_it.c"/>
+<element path="/Robofest/Src/stm32f7xx_hal_msp.c"/>
 </selection>
 </viewState>
 </view>
@@ -75,8 +75,6 @@
 </view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
-<expanded>&#x0A;<category IMemento.internal.id="Warnings (1 item)"/>
-</expanded>
 <columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="90" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="90" org.eclipse.ui.ide.severityAndDescriptionField="662"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
@@ -221,8 +219,8 @@
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
 <hide_toolbar_item_id id="org.coocox.builder.ui.build"/>
 <hide_toolbar_item_id id="org.coocox.welcome.ui.action.welcome"/>
-<hide_toolbar_item_id id="org.coocox.codebugger.configuration.coideProgramDownloadAction"/>
 <hide_toolbar_item_id id="org.coocox.component.ui.ShowRepositoryAction"/>
+<hide_toolbar_item_id id="org.coocox.codebugger.configuration.coideProgramDownloadAction"/>
 <view id="org.coocox.codebugger.trace.ui.traceview"/>
 <view id="org.eclipse.debug.ui.VariableView"/>
 <view id="org.eclipse.debug.ui.VariableView:PIN_CLONE_VIEW_1"/>
@@ -279,39 +277,15 @@
 <editors>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Robofest/Src/stm32f7xx_it.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Robofest/Src/main.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Robofest/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Robofest/Src/stm32f7xx_hal_msp.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Robofest/Src/stm32f7xx_it.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Robofest/Src/stm32f7xx_it.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Robofest/Src/stm32f7xx_hal_msp.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Robofest/Src/stm32f7xx_hal_msp.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Robofest/Src/stm32f7xx_it.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Robofest/Src/stm32f7xx_it.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Robofest/Src/main.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Robofest/Src/stm32f7xx_hal_msp.c"/>
 </editors>
-<item historyLabel="main.c" index="1">
-<position info="not_deleted" x="4500" y="0"/>
-</item>
-<item historyLabel="stm32f7xx_it.c" index="0">
-<position info="not_deleted" x="7276" y="0"/>
-</item>
-<item historyLabel="main.c" index="1">
-<position info="not_deleted" x="4500" y="0"/>
-</item>
-<item historyLabel="stm32f7xx_it.c" index="0">
-<position info="not_deleted" x="6611" y="0"/>
-</item>
-<item historyLabel="stm32f7xx_hal_uart.c" index="2">
-<position info="not_deleted" x="45950" y="0"/>
-</item>
-<item historyLabel="stm32f7xx_hal_msp.c" index="3">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="stm32f7xx_it.c" index="0">
-<position info="not_deleted" x="6611" y="0"/>
-</item>
-<item historyLabel="stm32f7xx_hal_msp.c" index="3">
-<position info="not_deleted" x="0" y="0"/>
-</item>
 <item historyLabel="stm32f7xx_it.c" index="0">
 <position info="not_deleted" x="6611" y="0"/>
 </item>
@@ -321,13 +295,13 @@
 <item historyLabel="main.c" index="1">
 <position info="not_deleted" x="4060" y="0"/>
 </item>
-<item historyLabel="stm32f7xx_it.c" index="4">
+<item historyLabel="stm32f7xx_it.c" index="2">
 <position info="not_deleted" x="6611" y="0"/>
 </item>
 <item historyLabel="main.c" index="1">
 <position info="not_deleted" x="4060" y="0"/>
 </item>
-<item historyLabel="stm32f7xx_it.c" index="4">
+<item historyLabel="stm32f7xx_it.c" index="2">
 <position info="not_deleted" x="6611" y="0"/>
 </item>
 <item historyLabel="main.c" index="1">
@@ -339,19 +313,19 @@
 <item historyLabel="main.c" index="1">
 <position info="not_deleted" x="4319" y="0"/>
 </item>
-<item historyLabel="stm32f7xx_it.c" index="4">
+<item historyLabel="stm32f7xx_it.c" index="2">
 <position info="not_deleted" x="6611" y="0"/>
 </item>
 <item historyLabel="main.c" index="1">
 <position info="not_deleted" x="4317" y="0"/>
 </item>
-<item historyLabel="stm32f7xx_it.c" index="5">
+<item historyLabel="stm32f7xx_it.c" index="3">
 <position info="not_deleted" x="6611" y="0"/>
 </item>
 <item historyLabel="main.c" index="1">
 <position info="not_deleted" x="4710" y="0"/>
 </item>
-<item historyLabel="stm32f7xx_hal_msp.c" index="6">
+<item historyLabel="stm32f7xx_hal_msp.c" index="4">
 <position info="not_deleted" x="0" y="0"/>
 </item>
 <item historyLabel="main.c" index="1">
@@ -369,7 +343,7 @@
 <item historyLabel="main.c" index="1">
 <position info="not_deleted" x="4317" y="0"/>
 </item>
-<item historyLabel="stm32f7xx_hal_msp.c" index="7">
+<item historyLabel="stm32f7xx_hal_msp.c" index="5">
 <position info="not_deleted" x="0" y="0"/>
 </item>
 <item historyLabel="main.c" index="1">
@@ -387,28 +361,28 @@
 <item historyLabel="main.c" index="1">
 <position info="not_deleted" x="4537" y="0"/>
 </item>
-<item historyLabel="stm32f7xx_it.c" index="8">
+<item historyLabel="stm32f7xx_it.c" index="6">
 <position info="not_deleted" x="6611" y="0"/>
 </item>
 <item historyLabel="main.c" index="1">
 <position info="not_deleted" x="4537" y="0"/>
 </item>
-<item historyLabel="stm32f7xx_hal_msp.c" index="7">
+<item historyLabel="stm32f7xx_hal_msp.c" index="5">
 <position info="not_deleted" x="0" y="0"/>
 </item>
 <item historyLabel="main.c" index="1">
 <position info="not_deleted" x="4617" y="0"/>
 </item>
-<item historyLabel="stm32f7xx_hal_msp.c" index="7">
+<item historyLabel="stm32f7xx_hal_msp.c" index="5">
 <position info="not_deleted" x="0" y="0"/>
 </item>
 <item historyLabel="main.c" index="1">
 <position info="not_deleted" x="4617" y="0"/>
 </item>
-<item historyLabel="stm32f7xx_hal_msp.c" index="7">
+<item historyLabel="stm32f7xx_hal_msp.c" index="5">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="stm32f7xx_it.c" index="8">
+<item historyLabel="stm32f7xx_it.c" index="6">
 <position info="not_deleted" x="6611" y="0"/>
 </item>
 <item historyLabel="main.c" index="1">
@@ -435,7 +409,31 @@
 <item historyLabel="main.c" index="1">
 <position info="not_deleted" x="5244" y="0"/>
 </item>
-<item active="true" historyLabel="stm32f7xx_it.c" index="9">
+<item historyLabel="stm32f7xx_it.c" index="7">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="main.c" index="8">
+<position info="not_deleted" x="5244" y="0"/>
+</item>
+<item historyLabel="stm32f7xx_it.c" index="7">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="main.c" index="8">
+<position info="not_deleted" x="5132" y="0"/>
+</item>
+<item historyLabel="main.c" index="8">
+<position info="not_deleted" x="5365" y="0"/>
+</item>
+<item historyLabel="main.c" index="8">
+<position info="not_deleted" x="5365" y="0"/>
+</item>
+<item historyLabel="stm32f7xx_hal_msp.c" index="9">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="main.c" index="8">
+<position info="not_deleted" x="5365" y="0"/>
+</item>
+<item active="true" historyLabel="stm32f7xx_hal_msp.c" index="9">
 <position info="not_deleted" x="0" y="0"/>
 </item>
 </navigationHistory>

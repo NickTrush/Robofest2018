@@ -51,12 +51,14 @@ __lock___sinit_recursive_mutex
 htim3               0x40              ..\obj\main.o
 __lock___malloc_recursive_mutex
                     0x1               c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-lock.o)
+prev_ch10           0x2               ..\obj\main.o
 i                   0x4               ..\obj\main.o
 byte                0x1               ..\obj\stm32f7xx_it.o
 DCH2                0x1               ..\obj\main.o
 htim6               0x40              ..\obj\main.o
 htim9               0x40              ..\obj\main.o
 failsafe            0x1               ..\obj\main.o
+prev_ch11           0x2               ..\obj\main.o
 htim2               0x40              ..\obj\main.o
 huart2              0x70              ..\obj\main.o
 __lock___at_quick_exit_mutex
@@ -286,7 +288,7 @@ LOAD c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-
 LOAD c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/crt0.o
                 0x20050000                _eram = 0x20050000
 
-.text           0x08000000     0xd000
+.text           0x08000000     0xd1a4
  *(.isr_vector)
  .isr_vector    0x08000000      0x134 ..\obj\startup_stm32f10x_hd.o
                 0x08000000                g_pfnVectors
@@ -623,70 +625,70 @@ LOAD c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-
                 0x0800ad1e                HAL_DMA_GetState
                 0x0800ad38                HAL_DMA_GetError
  *fill*         0x0800af04        0x4 
- .text          0x0800af08     0x12cc ..\obj\main.o
+ .text          0x0800af08     0x1470 ..\obj\main.o
                 0x0800af08                main
-                0x0800b86c                SystemClock_Config
-                0x0800c1c8                _Error_Handler
- .text          0x0800c1d4      0x468 ..\obj\stm32f7xx_hal_msp.o
-                0x0800c1d4                HAL_MspInit
-                0x0800c236                HAL_TIM_Base_MspInit
-                0x0800c2a4                HAL_TIM_PWM_MspInit
-                0x0800c330                HAL_TIM_MspPostInit
-                0x0800c44c                HAL_TIM_Base_MspDeInit
-                0x0800c498                HAL_TIM_PWM_MspDeInit
-                0x0800c500                HAL_UART_MspInit
-                0x0800c5cc                HAL_UART_MspDeInit
- .text          0x0800c63c      0x370 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m\libgcc.a(_arm_addsubdf3.o)
-                0x0800c63c                __aeabi_drsub
-                0x0800c644                __aeabi_dsub
-                0x0800c644                __subdf3
-                0x0800c648                __aeabi_dadd
-                0x0800c648                __adddf3
-                0x0800c8c0                __floatunsidf
-                0x0800c8c0                __aeabi_ui2d
-                0x0800c8e0                __floatsidf
-                0x0800c8e0                __aeabi_i2d
-                0x0800c904                __aeabi_f2d
-                0x0800c904                __extendsfdf2
-                0x0800c940                __floatundidf
-                0x0800c940                __aeabi_ul2d
-                0x0800c950                __floatdidf
-                0x0800c950                __aeabi_l2d
- .text          0x0800c9ac      0x424 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m\libgcc.a(_arm_muldivdf3.o)
-                0x0800c9ac                __aeabi_dmul
-                0x0800c9ac                __muldf3
-                0x0800cc00                __divdf3
-                0x0800cc00                __aeabi_ddiv
- .text          0x0800cdd0       0x50 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m\libgcc.a(_arm_fixdfsi.o)
-                0x0800cdd0                __aeabi_d2iz
-                0x0800cdd0                __fixdfsi
- .text          0x0800ce20       0x40 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m\libgcc.a(_arm_fixunsdfsi.o)
-                0x0800ce20                __aeabi_d2uiz
-                0x0800ce20                __fixunsdfsi
+                0x0800b9f4                SystemClock_Config
+                0x0800c36c                _Error_Handler
+ .text          0x0800c378      0x468 ..\obj\stm32f7xx_hal_msp.o
+                0x0800c378                HAL_MspInit
+                0x0800c3da                HAL_TIM_Base_MspInit
+                0x0800c448                HAL_TIM_PWM_MspInit
+                0x0800c4d4                HAL_TIM_MspPostInit
+                0x0800c5f0                HAL_TIM_Base_MspDeInit
+                0x0800c63c                HAL_TIM_PWM_MspDeInit
+                0x0800c6a4                HAL_UART_MspInit
+                0x0800c770                HAL_UART_MspDeInit
+ .text          0x0800c7e0      0x370 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m\libgcc.a(_arm_addsubdf3.o)
+                0x0800c7e0                __aeabi_drsub
+                0x0800c7e8                __aeabi_dsub
+                0x0800c7e8                __subdf3
+                0x0800c7ec                __aeabi_dadd
+                0x0800c7ec                __adddf3
+                0x0800ca64                __floatunsidf
+                0x0800ca64                __aeabi_ui2d
+                0x0800ca84                __floatsidf
+                0x0800ca84                __aeabi_i2d
+                0x0800caa8                __aeabi_f2d
+                0x0800caa8                __extendsfdf2
+                0x0800cae4                __floatundidf
+                0x0800cae4                __aeabi_ul2d
+                0x0800caf4                __floatdidf
+                0x0800caf4                __aeabi_l2d
+ .text          0x0800cb50      0x424 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m\libgcc.a(_arm_muldivdf3.o)
+                0x0800cb50                __aeabi_dmul
+                0x0800cb50                __muldf3
+                0x0800cda4                __divdf3
+                0x0800cda4                __aeabi_ddiv
+ .text          0x0800cf74       0x50 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m\libgcc.a(_arm_fixdfsi.o)
+                0x0800cf74                __aeabi_d2iz
+                0x0800cf74                __fixdfsi
+ .text          0x0800cfc4       0x40 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m\libgcc.a(_arm_fixunsdfsi.o)
+                0x0800cfc4                __aeabi_d2uiz
+                0x0800cfc4                __fixunsdfsi
  .text.startup.register_fini
-                0x0800ce60       0x14 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-__call_atexit.o)
- .text.atexit   0x0800ce74        0xc c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-atexit.o)
-                0x0800ce74                atexit
+                0x0800d004       0x14 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-__call_atexit.o)
+ .text.atexit   0x0800d018        0xc c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-atexit.o)
+                0x0800d018                atexit
  .text.__libc_fini_array
-                0x0800ce80       0x34 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-fini.o)
-                0x0800ce80                __libc_fini_array
+                0x0800d024       0x34 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-fini.o)
+                0x0800d024                __libc_fini_array
  .text.__retarget_lock_acquire_recursive
-                0x0800ceb4        0x4 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-lock.o)
-                0x0800ceb4                __retarget_lock_acquire_recursive
+                0x0800d058        0x4 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-lock.o)
+                0x0800d058                __retarget_lock_acquire_recursive
  .text.__retarget_lock_release_recursive
-                0x0800ceb8        0x4 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-lock.o)
-                0x0800ceb8                __retarget_lock_release_recursive
+                0x0800d05c        0x4 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-lock.o)
+                0x0800d05c                __retarget_lock_release_recursive
  .text.__register_exitproc
-                0x0800cebc       0xc4 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-__atexit.o)
-                0x0800cebc                __register_exitproc
+                0x0800d060       0xc4 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-__atexit.o)
+                0x0800d060                __register_exitproc
  *(.init)
- .init          0x0800cf80        0x4 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/crti.o
-                0x0800cf80                _init
- .init          0x0800cf84        0x8 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/crtn.o
+ .init          0x0800d124        0x4 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/crti.o
+                0x0800d124                _init
+ .init          0x0800d128        0x8 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/crtn.o
  *(.fini)
- .fini          0x0800cf8c        0x4 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/crti.o
-                0x0800cf8c                _fini
- .fini          0x0800cf90        0x8 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/crtn.o
+ .fini          0x0800d130        0x4 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/crti.o
+                0x0800d130                _fini
+ .fini          0x0800d134        0x8 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/crtn.o
  *crtbegin.o(.ctors)
  *crtbegin?.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o *crtend?.o) .ctors)
@@ -698,48 +700,48 @@ LOAD c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-
  *(SORT(.dtors.*))
  *(.dtors)
  *(.rodata*)
- .rodata        0x0800cf98       0x18 ..\obj\system_stm32f7xx.o
-                0x0800cf98                AHBPrescTable
-                0x0800cfa8                APBPrescTable
- .rodata        0x0800cfb0        0x8 ..\obj\stm32f7xx_hal_dma.o
- .rodata        0x0800cfb8       0x44 ..\obj\main.o
+ .rodata        0x0800d13c       0x18 ..\obj\system_stm32f7xx.o
+                0x0800d13c                AHBPrescTable
+                0x0800d14c                APBPrescTable
+ .rodata        0x0800d154        0x8 ..\obj\stm32f7xx_hal_dma.o
+ .rodata        0x0800d15c       0x44 ..\obj\main.o
  .rodata._global_impure_ptr
-                0x0800cffc        0x4 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-impure.o)
-                0x0800cffc                _global_impure_ptr
+                0x0800d1a0        0x4 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-impure.o)
+                0x0800d1a0                _global_impure_ptr
  *(.eh_fram e*)
 
-.eh_frame       0x0800d000        0x0
- .eh_frame      0x0800d000        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/crtbegin.o
+.eh_frame       0x0800d1a4        0x0
+ .eh_frame      0x0800d1a4        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/crtbegin.o
 
-.glue_7         0x0800d000        0x0
- .glue_7        0x0800d000        0x0 linker stubs
+.glue_7         0x0800d1a4        0x0
+ .glue_7        0x0800d1a4        0x0 linker stubs
 
-.glue_7t        0x0800d000        0x0
- .glue_7t       0x0800d000        0x0 linker stubs
+.glue_7t        0x0800d1a4        0x0
+ .glue_7t       0x0800d1a4        0x0 linker stubs
 
-.vfp11_veneer   0x0800d000        0x0
- .vfp11_veneer  0x0800d000        0x0 linker stubs
+.vfp11_veneer   0x0800d1a4        0x0
+ .vfp11_veneer  0x0800d1a4        0x0 linker stubs
 
-.v4_bx          0x0800d000        0x0
- .v4_bx         0x0800d000        0x0 linker stubs
+.v4_bx          0x0800d1a4        0x0
+ .v4_bx         0x0800d1a4        0x0 linker stubs
 
-.iplt           0x0800d000        0x0
- .iplt          0x0800d000        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/crtbegin.o
+.iplt           0x0800d1a4        0x0
+ .iplt          0x0800d1a4        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/crtbegin.o
 
-.rel.dyn        0x0800d000        0x0
- .rel.iplt      0x0800d000        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/crtbegin.o
+.rel.dyn        0x0800d1a4        0x0
+ .rel.iplt      0x0800d1a4        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/crtbegin.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x0800d000                __exidx_start = .
+                0x0800d1a4                __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x0800d000                __exidx_end = .
-                0x0800d000                __etext = .
-                0x0800d000                _sidata = __etext
+                0x0800d1a4                __exidx_end = .
+                0x0800d1a4                __etext = .
+                0x0800d1a4                _sidata = __etext
 
-.data           0x20000000      0x44c load address 0x0800d000
+.data           0x20000000      0x44c load address 0x0800d1a4
                 0x20000000                __data_start__ = .
                 0x20000000                _sdata = __data_start__
  *(vtable)
@@ -783,10 +785,10 @@ LOAD c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-
                 0x2000044c                __data_end__ = .
                 0x2000044c                _edata = __data_end__
 
-.igot.plt       0x2000044c        0x0 load address 0x0800d44c
+.igot.plt       0x2000044c        0x0 load address 0x0800d5f0
  .igot.plt      0x2000044c        0x0 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/crtbegin.o
 
-.bss            0x2000044c      0x3a4 load address 0x0800d44c
+.bss            0x2000044c      0x3a8 load address 0x0800d5f0
                 0x2000044c                . = ALIGN (0x4)
                 0x2000044c                __bss_start__ = .
                 0x2000044c                _sbss = __bss_start__
@@ -807,7 +809,7 @@ LOAD c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-
  COMMON         0x20000478        0x1 ..\obj\stm32f7xx_it.o
                 0x20000478                byte
  *fill*         0x20000479        0x3 
- COMMON         0x2000047c      0x350 ..\obj\main.o
+ COMMON         0x2000047c      0x354 ..\obj\main.o
                 0x2000047c                CH
                 0x2000049c                tank_switch
                 0x200004a0                Radio_Data
@@ -817,42 +819,45 @@ LOAD c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-
                 0x2000064c                DCH1
                 0x2000064d                Frame_lost
                 0x20000650                htim3
-                0x20000690                i
-                0x20000694                DCH2
-                0x20000698                htim6
-                0x200006d8                htim9
-                0x20000718                failsafe
-                0x2000071c                htim2
-                0x2000075c                huart2
- COMMON         0x200007cc       0x21 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-lock.o)
-                0x200007cc                __lock___atexit_recursive_mutex
-                0x200007d0                __lock___arc4random_mutex
-                0x200007d4                __lock___env_recursive_mutex
-                0x200007d8                __lock___sinit_recursive_mutex
-                0x200007dc                __lock___malloc_recursive_mutex
-                0x200007e0                __lock___at_quick_exit_mutex
-                0x200007e4                __lock___dd_hash_mutex
-                0x200007e8                __lock___tz_mutex
-                0x200007ec                __lock___sfp_recursive_mutex
-                0x200007f0                . = ALIGN (0x4)
- *fill*         0x200007ed        0x3 
-                0x200007f0                __bss_end__ = .
-                0x200007f0                _ebss = __bss_end__
+                0x20000690                prev_ch10
+                0x20000694                i
+                0x20000698                DCH2
+                0x2000069c                htim6
+                0x200006dc                htim9
+                0x2000071c                failsafe
+                0x2000071e                prev_ch11
+                0x20000720                htim2
+                0x20000760                huart2
+ COMMON         0x200007d0       0x21 c:/coocox/gcc-arm-none-eabi-6-2017-q2-update-win32/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg.a(lib_a-lock.o)
+                0x200007d0                __lock___atexit_recursive_mutex
+                0x200007d4                __lock___arc4random_mutex
+                0x200007d8                __lock___env_recursive_mutex
+                0x200007dc                __lock___sinit_recursive_mutex
+                0x200007e0                __lock___malloc_recursive_mutex
+                0x200007e4                __lock___at_quick_exit_mutex
+                0x200007e8                __lock___dd_hash_mutex
+                0x200007ec                __lock___tz_mutex
+                0x200007f0                __lock___sfp_recursive_mutex
+                0x200007f4                . = ALIGN (0x4)
+ *fill*         0x200007f1        0x3 
+                0x200007f4                __bss_end__ = .
+                0x200007f4                _ebss = __bss_end__
 
-.heap           0x200007f0        0x0
-                0x200007f0                __end__ = .
-                0x200007f0                _end = __end__
-                0x200007f0                end = __end__
+.heap           0x200007f4        0x0
+                0x200007f4                __end__ = .
+                0x200007f4                _end = __end__
+                0x200007f4                end = __end__
  *(.heap*)
-                0x200007f0                __HeapLimit = .
+                0x200007f4                __HeapLimit = .
 
-.co_stack       0x200007f0      0x400 load address 0x0800d7f0
-                0x200007f0                . = ALIGN (0x8)
+.co_stack       0x200007f4      0x404 load address 0x0800d998
+                0x200007f8                . = ALIGN (0x8)
+ *fill*         0x200007f4        0x4 
  *(.co_stack .co_stack.*)
- .co_stack      0x200007f0      0x400 ..\obj\startup_stm32f10x_hd.o
-                0x200007f0                pulStack
+ .co_stack      0x200007f8      0x400 ..\obj\startup_stm32f10x_hd.o
+                0x200007f8                pulStack
                 0x20050000                __StackTop = (ORIGIN (ram) + LENGTH (ram))
-                0x2004fc00                __StackLimit = (__StackTop - SIZEOF (.co_stack))
+                0x2004fbfc                __StackLimit = (__StackTop - SIZEOF (.co_stack))
                 0x20050000                PROVIDE (__stack, __StackTop)
                 0x00000001                ASSERT ((__StackLimit >= __HeapLimit), region ram  overflowed with stack)
 LOAD ..\obj\stm32f7xx_hal_tim_ex.o
@@ -961,7 +966,7 @@ OUTPUT(Robofest.elf elf32-littlearm)
  .comment       0x0000007f       0x80 ..\obj\main.o
  .comment       0x0000007f       0x80 ..\obj\stm32f7xx_hal_msp.o
 
-.debug_info     0x00000000    0x11d8c
+.debug_info     0x00000000    0x11dae
  .debug_info    0x00000000     0x1acd ..\obj\stm32f7xx_hal_tim_ex.o
  .debug_info    0x00001acd     0x110b ..\obj\stm32f7xx_hal.o
  .debug_info    0x00002bd8      0x10b ..\obj\startup_stm32f10x_hd.o
@@ -974,8 +979,8 @@ OUTPUT(Robofest.elf elf32-littlearm)
  .debug_info    0x0000b447     0x1814 ..\obj\stm32f7xx_hal_cortex.o
  .debug_info    0x0000cc5b      0x6e3 ..\obj\system_stm32f7xx.o
  .debug_info    0x0000d33e     0x1133 ..\obj\stm32f7xx_hal_dma.o
- .debug_info    0x0000e471     0x20c8 ..\obj\main.o
- .debug_info    0x00010539     0x1853 ..\obj\stm32f7xx_hal_msp.o
+ .debug_info    0x0000e471     0x20ea ..\obj\main.o
+ .debug_info    0x0001055b     0x1853 ..\obj\stm32f7xx_hal_msp.o
 
 .debug_abbrev   0x00000000     0x22cd
  .debug_abbrev  0x00000000      0x2c0 ..\obj\stm32f7xx_hal_tim_ex.o
@@ -1023,7 +1028,7 @@ OUTPUT(Robofest.elf elf32-littlearm)
  .debug_aranges
                 0x000001a0       0x20 ..\obj\stm32f7xx_hal_msp.o
 
-.debug_line     0x00000000     0x4f5c
+.debug_line     0x00000000     0x4f95
  .debug_line    0x00000000      0x87d ..\obj\stm32f7xx_hal_tim_ex.o
  .debug_line    0x0000087d      0x3ad ..\obj\stm32f7xx_hal.o
  .debug_line    0x00000c2a       0x8a ..\obj\startup_stm32f10x_hd.o
@@ -1036,10 +1041,10 @@ OUTPUT(Robofest.elf elf32-littlearm)
  .debug_line    0x00003983      0x4ab ..\obj\stm32f7xx_hal_cortex.o
  .debug_line    0x00003e2e      0x245 ..\obj\system_stm32f7xx.o
  .debug_line    0x00004073      0x56c ..\obj\stm32f7xx_hal_dma.o
- .debug_line    0x000045df      0x550 ..\obj\main.o
- .debug_line    0x00004b2f      0x42d ..\obj\stm32f7xx_hal_msp.o
+ .debug_line    0x000045df      0x589 ..\obj\main.o
+ .debug_line    0x00004b68      0x42d ..\obj\stm32f7xx_hal_msp.o
 
-.debug_str      0x00000000     0x443d
+.debug_str      0x00000000     0x4451
  .debug_str     0x00000000     0x1114 ..\obj\stm32f7xx_hal_tim_ex.o
                                0x11e7 (size before relaxing)
  .debug_str     0x00001114      0x9a4 ..\obj\stm32f7xx_hal.o
@@ -1064,9 +1069,9 @@ OUTPUT(Robofest.elf elf32-littlearm)
                                 0x43a (size before relaxing)
  .debug_str     0x00003e58      0x344 ..\obj\stm32f7xx_hal_dma.o
                                 0xb96 (size before relaxing)
- .debug_str     0x0000419c      0x229 ..\obj\main.o
-                               0x1ae5 (size before relaxing)
- .debug_str     0x000043c5       0x78 ..\obj\stm32f7xx_hal_msp.o
+ .debug_str     0x0000419c      0x23d ..\obj\main.o
+                               0x1af9 (size before relaxing)
+ .debug_str     0x000043d9       0x78 ..\obj\stm32f7xx_hal_msp.o
                                0x1488 (size before relaxing)
 
 .debug_frame    0x00000000     0x3370

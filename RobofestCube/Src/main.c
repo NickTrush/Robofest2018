@@ -111,6 +111,9 @@ int16_t PWM_manipulator_rotate = 900;
 // Camera variables
 int16_t PWM_LeftRight = 544;
 int16_t PWM_UpDown = 544;
+
+// Button variables
+uint16_t prev_ch10, prev_ch11;
 /* USER CODE END 0 */
 
 int main(void)
@@ -254,7 +257,7 @@ int main(void)
       		break;
       	}
       	
-      	case 1024:
+      	case 1024: // Camera mod
       	{
       		// Stop motion
       		__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, 0);
@@ -265,22 +268,31 @@ int main(void)
       		__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_2, 0);
       		__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_3, 0);
 
-      		// Left-Right
-      		iteration = Switch_Range(0, 2048, -180, 180, CH[0]);
-      		PWM_LeftRight += iteration;
-      		PWM_LeftRight = Min_Max(PWM_LeftRight, 600, 2300);  // PWM_slope = Min_Max(PWM_slope, 544, 2400);
-			__HAL_TIM_SET_COMPARE(&htim9, TIM_CHANNEL_1, PWM_LeftRight);
-
-			// Up-Down
-			iteration = Switch_Range(0, 2048, -180, 180, CH[1]);
-			PWM_UpDown += iteration;
-			PWM_UpDown = Min_Max(PWM_UpDown, 600, 2300);
-			__HAL_TIM_SET_COMPARE(&htim9, TIM_CHANNEL_2, PWM_UpDown);
+      		if (Frame_lost)
+      		{
+      			// Stop Camera
+      			__HAL_TIM_SET_COMPARE(&htim9, TIM_CHANNEL_1, 0);
+      			__HAL_TIM_SET_COMPARE(&htim9, TIM_CHANNEL_2, 0);
+      		}
+      		else
+      		{
+      			// Left-Right
+      			iteration = Switch_Range(0, 2048, -180, 180, CH[0]);
+      			PWM_LeftRight += iteration;
+      			PWM_LeftRight = Min_Max(PWM_LeftRight, 600, 2300);  // PWM_slope = Min_Max(PWM_slope, 544, 2400);
+				__HAL_TIM_SET_COMPARE(&htim9, TIM_CHANNEL_1, PWM_LeftRight);
+	
+				// Up-Down
+				iteration = Switch_Range(0, 2048, -180, 180, CH[1]);
+				PWM_UpDown += iteration;
+				PWM_UpDown = Min_Max(PWM_UpDown, 600, 2300);
+				__HAL_TIM_SET_COMPARE(&htim9, TIM_CHANNEL_2, PWM_UpDown);
+      		}      		
 
 			break;
       	}
 
-      	case 2048:
+      	case 2048: // Manipulator mod
       	{
       		// Stop motion
       		__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, 0);
@@ -291,7 +303,11 @@ int main(void)
       		__HAL_TIM_SET_COMPARE(&htim9, TIM_CHANNEL_2, 0);
 	
       		if (Frame_lost) // If the packege has been lost, we all turn off
+      		{
       			__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, 0);
+      			__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_2, 0);
+      			__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_3, 0);
+      		}
       		else
       		{
       			// Capture the goal
@@ -323,6 +339,51 @@ int main(void)
 
 				break;
       		}
+      	}
+      }
+
+      if (CH[9] == 2048) // Automatical capture mode
+      {
+      	// Stop motion
+      	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, 0);
+      	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_2, 0);
+
+      	// Remember previous value
+      	prev_ch10 = CH[10];
+      	prev_ch11 = CH[11];
+
+      	// Capasity of rotation
+      	iteration = 1;
+
+      	while(HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_0)) // While button is not pressed
+      	{
+      		// Iteration degree
+      		CH[10] += iteration;
+      		CH[11] += iteration;
+
+      		if ((CH[10] > 2048) || (CH[11] > 2048)) // There was an overflow but the button was not pressed
+      		{
+      			// Return previous values
+      			CH[10] = prev_ch10;
+      			CH[11] = prev_ch11;
+
+      			// Return manipulator in previous position
+      			__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, Switch_Range(0, 2048, 900, 2100, CH[10]));
+      			__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_2, Switch_Range(0, 2048, 900, 2100, CH[11]));
+      			break;
+      		}
+
+      		// Set PWM settings
+      		__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, Switch_Range(0, 2048, 900, 2100, CH[10]));
+      		__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_2, Switch_Range(0, 2048, 900, 2100, CH[11]));
+      	}
+      	if ((CH[10] <= 2048) && (CH[11] <= 2048)) // There is no an overflow, 
+      	{
+      		// capture the target
+      		__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, 2300);
+
+      		// Wake up manipulator
+      		__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, 1300);
       	}
       }
 
@@ -694,6 +755,12 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : PE0 */
+  GPIO_InitStruct.Pin = GPIO_PIN_0;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
 
 }
 
