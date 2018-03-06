@@ -344,9 +344,14 @@ int main(void)
 
       if (CH[9] == 2048) // Automatical capture mode
       {
+
       	// Stop motion
       	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, 0);
       	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_2, 0);
+
+      	// Stop Camera
+      	__HAL_TIM_SET_COMPARE(&htim9, TIM_CHANNEL_1, 0);
+      	__HAL_TIM_SET_COMPARE(&htim9, TIM_CHANNEL_2, 0);
 
       	// Remember previous value
       	prev_ch10 = CH[10];
@@ -357,11 +362,21 @@ int main(void)
 
       	while(HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_0)) // While button is not pressed
       	{
+      		// NON BLOCK!!!
+      		Radio_flag = 0;
+
       		// Iteration degree
       		CH[10] += iteration;
       		CH[11] += iteration;
 
-      		if ((CH[10] > 2048) || (CH[11] > 2048)) // There was an overflow but the button was not pressed
+      		for (i = 0; i < 1000; i++);
+ //     		HAL_Delay(1000);
+
+      		// Checking the automatic mode
+      		CH[8] = Radio_Data[12] + Parser(Radio_Data[13], 0b00000111, 8); // Close Right-Right switch
+      		Calibration_Channels(&CH[8], 172, 1811);
+
+      		if ((CH[10] > 2048) || (CH[11] > 2048) || (CH[8] != 1024)) // There was an overflow but the button was not pressed
       		{
       			// Return previous values
       			CH[10] = prev_ch10;
@@ -377,7 +392,7 @@ int main(void)
       		__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, Switch_Range(0, 2048, 900, 2100, CH[10]));
       		__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_2, Switch_Range(0, 2048, 900, 2100, CH[11]));
       	}
-      	if ((CH[10] <= 2048) && (CH[11] <= 2048)) // There is no an overflow, 
+      	if ((CH[10] <= 2048) && (CH[11] <= 2048) && (CH[8] == 1024)) // There is no an overflow, 
       	{
       		// capture the target
       		__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, 2300);
@@ -387,17 +402,71 @@ int main(void)
       	}
       }
 
-      switch (CH[7])
+      switch (CH[7]) // Switch camera mod
       {
-      	case 0:
+      	case 0: // Cammon camera
       	{
       		HAL_GPIO_WritePin(GPIOE, GPIO_PIN_2, GPIO_PIN_RESET);
       		break;
       	}
 
-      	case 2048:
+      	case 2048: // Special camera
       	{
       		HAL_GPIO_WritePin(GPIOE, GPIO_PIN_2, GPIO_PIN_SET);
+      		break;
+      	}
+      }
+
+      switch(CH[6]) // Features
+      {
+      	case 1024: // Roll up the manipulator
+      	{
+      		__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, 1500);
+      		__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_2, 1500);
+      		__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_3, 1500);
+      		__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, 1500);
+      		__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_2, 1500);
+      		__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, 1500);
+
+      		break;
+      	}
+
+      	case 2048: // Automatic climbing!
+      	{
+      		// Full power!
+      		Engine_PWM_Set(2048, 2048);
+
+      		// While there is no inclination we go
+      		while ((HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_0 == 0)) && (HAL_GPIO_ReadPin(GPIOD, GPIO_PIN_0 == 0)) && (HAL_GPIO_ReadPin(GPIOD, GPIO_PIN_1 == 0)))
+      		{
+      			// NON BLOCK!!!
+      			Radio_flag = 0;
+
+      			// Checking the automatic mode
+      			CH[8] = Radio_Data[12] + Parser(Radio_Data[13], 0b00000111, 8); // Close Right-Right switch
+      			Calibration_Channels(&CH[8], 172, 1811);
+
+      			if (CH[8] != 1024)
+      				break;
+      		}
+      		
+      		// We continue to go until each one is equalized
+      		while (HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_0) || HAL_GPIO_ReadPin(GPIOD, GPIO_PIN_0) || HAL_GPIO_ReadPin(GPIOD, GPIO_PIN_1))
+      		{
+      			// NON BLOCK!!!
+      			Radio_flag = 0;
+
+      			// Checking the automatic mode
+      			CH[8] = Radio_Data[12] + Parser(Radio_Data[13], 0b00000111, 8); // Close Right-Right switch
+      			Calibration_Channels(&CH[8], 172, 1811);
+
+      			if (CH[8] != 1024)
+      				break;
+      		}
+
+      		// We drove to the top. Stop!
+      		Engine_PWM_Set(0, 0);
+
       		break;
       	}
       }
@@ -749,6 +818,7 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
+  __HAL_RCC_GPIOG_CLK_ENABLE();
   __HAL_RCC_GPIOD_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
@@ -780,6 +850,18 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : PG0 */
+  GPIO_InitStruct.Pin = GPIO_PIN_0;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOG, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : PD0 PD1 */
+  GPIO_InitStruct.Pin = GPIO_PIN_0|GPIO_PIN_1;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
 
   /*Configure GPIO pin : PE0 */
   GPIO_InitStruct.Pin = GPIO_PIN_0;
